@@ -62,6 +62,10 @@
     <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
+    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
