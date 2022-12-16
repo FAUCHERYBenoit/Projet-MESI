@@ -1,18 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace audio
 {
-    // Start is called before the first frame update
-    void Start()
+    public class AudioManager : MonoBehaviour
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void HandleAudioMessage(AudioMessage audioMessage)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

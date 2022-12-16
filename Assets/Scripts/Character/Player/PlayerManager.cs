@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : AbstractCharacterManager
+namespace character
 {
-
+    public class PlayerManager : AbstractCharacterManager
+    {
+        public PlayerStats playerStats;
+    }
 }
+

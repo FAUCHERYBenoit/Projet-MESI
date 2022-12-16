@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Linq;
 
-namespace character.stats
+namespace character
 {
     public abstract class AbstractCharacterStats : ScriptableObject
     {
@@ -26,9 +26,13 @@ namespace character.stats
                 this.amount = amount;
             }
 
-            public StatTypes statTypes { get; private set; }
-            public float amount { get; private set; }
-            public float maxAmount { get; private set; }
+            [SerializeField] private StatTypes statTypes;
+            public StatTypes StatTypes { get { return statTypes; } }
+            [SerializeField] private float amount;
+            public float Amount { get { return amount; } }
+            [SerializeField] private float maxAmount;
+            public float MaxAmount { get { return maxAmount; } }
+
             public void AddOrRemove(float amount)
             {
                 this.amount += amount;
@@ -57,7 +61,7 @@ namespace character.stats
         /// <param name="amount">Amount to ass or remove </param>
         public virtual void AddOrRemoveStat(StatTypes statTypes, float amount)
         {
-            Stat stat = characterStats.Where(s => s.statTypes == statTypes).FirstOrDefault();
+            Stat stat = characterStats.Where(s => s.StatTypes == statTypes).FirstOrDefault();
             stat.AddOrRemove(amount);
         }
 
@@ -68,8 +72,18 @@ namespace character.stats
         /// <param name="amount">Amount to ass or remove </param>
         public virtual void SetStatAtValue(StatTypes statTypes, float amount)
         {
-            Stat stat = characterStats.Where(s => s.statTypes == statTypes).FirstOrDefault();
+            Stat stat = characterStats.Where(s => s.StatTypes == statTypes).FirstOrDefault();
             stat.SetValue(amount);
+        }
+
+        /// <summary>
+        /// Returns the value of a character stat
+        /// </summary>
+        /// <param name="statTypes"></param>
+        /// <returns></returns>
+        public virtual float GetStatValue(StatTypes statTypes)
+        {
+            return characterStats.Where(s => s.StatTypes == statTypes).FirstOrDefault().Amount;
         }
     }
 

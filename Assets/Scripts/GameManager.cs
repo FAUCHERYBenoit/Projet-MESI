@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
     private void SendMessageToUI(GameToUIMessage gtum)
     {
         throw new NotImplementedException();
-    }
+    } 
 }
 
 #region messages

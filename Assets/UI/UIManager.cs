@@ -4,7 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class UIManager : MonoBehaviour
+namespace UI
 {
-    
+    public class UIManager : MonoBehaviour
+    {
+        public void HandleMessage(GameToUIMessage gameToUIMessage)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
+

@@ -2,7 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NPCManager :  AbstractCharacterManager
+namespace character
 {
-
+    public class NPCManager : AbstractCharacterManager
+    {
+        public NPCStats nPCStats;
+    }
 }
+
