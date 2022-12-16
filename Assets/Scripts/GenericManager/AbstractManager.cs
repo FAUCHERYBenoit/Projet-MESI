@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class AbstractManager : MonoBehaviour
 {
+    /// <summary>
+    /// A method to send a message to a service 
+    /// </summary>
+    /// <param name="message"></param>
     public abstract void SendAMessage(Message message);
 }
 

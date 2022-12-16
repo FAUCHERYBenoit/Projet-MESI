@@ -28,6 +28,10 @@ public class GameManager : AbstractManager
     [SerializeField] private AudioManager audioManager;
     public AudioManager GetAudioManager { get; private set; }
 
+    /// <summary>
+    /// Use this methods to handle any messages 
+    /// </summary>
+    /// <param name="message"></param>
     public override void SendAMessage(Message message)
     {
         switch (message)

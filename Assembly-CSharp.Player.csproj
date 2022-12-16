@@ -58,15 +58,15 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\UI\UIManager.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
-    <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
-    <Compile Include="Assets\Scripts\AbstractManager.cs" />
+    <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
