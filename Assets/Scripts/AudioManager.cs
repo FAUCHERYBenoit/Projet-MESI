@@ -11,5 +11,10 @@ namespace audio
         {
             throw new NotImplementedException();
         }
+
+        public void SendMessage(Message message)
+        {
+            GameManager.Instance.SendAMessage(message);
+        }
     }
 }

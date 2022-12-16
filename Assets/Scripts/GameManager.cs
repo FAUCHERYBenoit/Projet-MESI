@@ -3,16 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UI;
+using audio;
 
-public class GameManager : MonoBehaviour
+public class GameManager : AbstractManager
 {
+    #region Singleton
+    public static GameManager Instance { get; private set; }
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
+    #endregion
+
     [SerializeField] private UIManager uIManager;
     public UIManager GetUIManager { get; private set; }
 
     [SerializeField] private AudioManager audioManager;
     public AudioManager GetAudioManager { get; private set; }
 
-    public void SendAMessage(Message message)
+    public override void SendAMessage(Message message)
     {
         switch (message)
         {
@@ -30,27 +46,16 @@ public class GameManager : MonoBehaviour
 
     private void SendMessageToAudio(AudioMessage am)
     {
-        throw new NotImplementedException();
+        audioManager.HandleAudioMessage(am);
+    }
+
+    private void SendMessageToUI(GameToUIMessage gtum)
+    {
+        uIManager.HandleMessage(gtum);
     }
 
     private void SendMessageToGame(UIToGameMessage utgm)
     {
         throw new NotImplementedException();
     }
-
-    private void SendMessageToUI(GameToUIMessage gtum)
-    {
-        throw new NotImplementedException();
-    } 
 }
-
-#region messages
-public class Message { }
-
-public class GameToUIMessage : Message { }
-
-public class UIToGameMessage : Message { }
-
-public class AudioMessage : Message { }
-
-#endregion

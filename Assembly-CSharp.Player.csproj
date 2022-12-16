@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
+    <Compile Include="Assets\Scripts\AbstractManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
