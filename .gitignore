@@ -2,5 +2,3 @@ Library
 .vs
 /obj/Debug
 /Temp
-*.csproj
-.log
