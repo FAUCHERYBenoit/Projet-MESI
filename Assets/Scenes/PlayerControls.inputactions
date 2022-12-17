@@ -78,68 +78,95 @@
             "id": "57defe5a-cd60-4dfc-bc0e-d3bae3805713",
             "actions": [
                 {
-                    "name": "MouseKeys",
+                    "name": "PrimaryButton",
                     "type": "Value",
                     "id": "2bc0befd-9b8b-4d6c-ab2f-f3b1956270e1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "SecondaryButton",
+                    "type": "Button",
+                    "id": "5c074d59-070d-46fe-8fd5-2a2d53bcdcad",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ForwardButton",
+                    "type": "Button",
+                    "id": "14c716e3-83eb-46e0-8740-2c9a6327d884",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "BackWardButton",
+                    "type": "Button",
+                    "id": "81bb563d-da53-4cad-832c-7e47282bf50c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "141f2efa-90b7-461e-9577-e662df774f9a",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1342cea8-fa86-4710-882c-cd6bec7b5627",
-                    "path": "<Mouse>/forwardButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "74788eeb-f97d-4fe9-9875-8f860b5b37e5",
-                    "path": "<Mouse>/backButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseKeys",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "d1d2eaee-fba4-47b0-952a-48b3e518c5c0",
+                    "id": "7b417bcb-0292-4831-8316-f9b94522088b",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseKeys",
+                    "action": "SecondaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "06226fbf-b66f-4f2e-a85e-9001cc265208",
+                    "path": "<Mouse>/forwardButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ForwardButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f2bf233-187e-4dc5-8fdb-b53d75652a60",
+                    "path": "<Mouse>/backButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BackWardButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2fb74755-8355-468e-bc0b-5f74d2eff6b4",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         },
         {
-            "name": "OtherActions",
+            "name": "KeyboardActions",
             "id": "f24fd615-1230-4f06-b021-f00ce678e9a1",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "KeyboardActions",
                     "type": "Button",
                     "id": "262b0760-231d-4719-917f-ea963e303528",
                     "expectedControlType": "Button",
@@ -156,7 +183,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -167,7 +194,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -178,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -189,7 +216,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -200,7 +227,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -211,7 +238,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -222,7 +249,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "KeyboardActions",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

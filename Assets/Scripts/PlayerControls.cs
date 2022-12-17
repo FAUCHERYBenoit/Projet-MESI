@@ -100,68 +100,95 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""57defe5a-cd60-4dfc-bc0e-d3bae3805713"",
             ""actions"": [
                 {
-                    ""name"": ""MouseKeys"",
+                    ""name"": ""PrimaryButton"",
                     ""type"": ""Value"",
                     ""id"": ""2bc0befd-9b8b-4d6c-ab2f-f3b1956270e1"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SecondaryButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""5c074d59-070d-46fe-8fd5-2a2d53bcdcad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ForwardButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""14c716e3-83eb-46e0-8740-2c9a6327d884"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BackWardButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""81bb563d-da53-4cad-832c-7e47282bf50c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""141f2efa-90b7-461e-9577-e662df774f9a"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1342cea8-fa86-4710-882c-cd6bec7b5627"",
-                    ""path"": ""<Mouse>/forwardButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""74788eeb-f97d-4fe9-9875-8f860b5b37e5"",
-                    ""path"": ""<Mouse>/backButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseKeys"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d1d2eaee-fba4-47b0-952a-48b3e518c5c0"",
+                    ""id"": ""7b417bcb-0292-4831-8316-f9b94522088b"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MouseKeys"",
+                    ""action"": ""SecondaryButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""06226fbf-b66f-4f2e-a85e-9001cc265208"",
+                    ""path"": ""<Mouse>/forwardButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ForwardButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6f2bf233-187e-4dc5-8fdb-b53d75652a60"",
+                    ""path"": ""<Mouse>/backButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BackWardButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2fb74755-8355-468e-bc0b-5f74d2eff6b4"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrimaryButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
             ]
         },
         {
-            ""name"": ""OtherActions"",
+            ""name"": ""KeyboardActions"",
             ""id"": ""f24fd615-1230-4f06-b021-f00ce678e9a1"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""KeyboardActions"",
                     ""type"": ""Button"",
                     ""id"": ""262b0760-231d-4719-917f-ea963e303528"",
                     ""expectedControlType"": ""Button"",
@@ -178,7 +205,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -189,7 +216,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -200,7 +227,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -211,7 +238,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -222,7 +249,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -233,7 +260,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -244,7 +271,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""KeyboardActions"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -258,10 +285,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_PlayerMouvement_Mouvement = m_PlayerMouvement.FindAction("Mouvement", throwIfNotFound: true);
         // MouseActions
         m_MouseActions = asset.FindActionMap("MouseActions", throwIfNotFound: true);
-        m_MouseActions_MouseKeys = m_MouseActions.FindAction("MouseKeys", throwIfNotFound: true);
-        // OtherActions
-        m_OtherActions = asset.FindActionMap("OtherActions", throwIfNotFound: true);
-        m_OtherActions_Newaction = m_OtherActions.FindAction("New action", throwIfNotFound: true);
+        m_MouseActions_PrimaryButton = m_MouseActions.FindAction("PrimaryButton", throwIfNotFound: true);
+        m_MouseActions_SecondaryButton = m_MouseActions.FindAction("SecondaryButton", throwIfNotFound: true);
+        m_MouseActions_ForwardButton = m_MouseActions.FindAction("ForwardButton", throwIfNotFound: true);
+        m_MouseActions_BackWardButton = m_MouseActions.FindAction("BackWardButton", throwIfNotFound: true);
+        // KeyboardActions
+        m_KeyboardActions = asset.FindActionMap("KeyboardActions", throwIfNotFound: true);
+        m_KeyboardActions_KeyboardActions = m_KeyboardActions.FindAction("KeyboardActions", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -354,12 +384,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // MouseActions
     private readonly InputActionMap m_MouseActions;
     private IMouseActionsActions m_MouseActionsActionsCallbackInterface;
-    private readonly InputAction m_MouseActions_MouseKeys;
+    private readonly InputAction m_MouseActions_PrimaryButton;
+    private readonly InputAction m_MouseActions_SecondaryButton;
+    private readonly InputAction m_MouseActions_ForwardButton;
+    private readonly InputAction m_MouseActions_BackWardButton;
     public struct MouseActionsActions
     {
         private @PlayerControls m_Wrapper;
         public MouseActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @MouseKeys => m_Wrapper.m_MouseActions_MouseKeys;
+        public InputAction @PrimaryButton => m_Wrapper.m_MouseActions_PrimaryButton;
+        public InputAction @SecondaryButton => m_Wrapper.m_MouseActions_SecondaryButton;
+        public InputAction @ForwardButton => m_Wrapper.m_MouseActions_ForwardButton;
+        public InputAction @BackWardButton => m_Wrapper.m_MouseActions_BackWardButton;
         public InputActionMap Get() { return m_Wrapper.m_MouseActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -369,63 +405,84 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_MouseActionsActionsCallbackInterface != null)
             {
-                @MouseKeys.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseKeys;
-                @MouseKeys.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseKeys;
-                @MouseKeys.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseKeys;
+                @PrimaryButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnPrimaryButton;
+                @PrimaryButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnPrimaryButton;
+                @PrimaryButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnPrimaryButton;
+                @SecondaryButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
+                @SecondaryButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
+                @SecondaryButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
+                @ForwardButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
+                @ForwardButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
+                @ForwardButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
+                @BackWardButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
+                @BackWardButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
+                @BackWardButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
             }
             m_Wrapper.m_MouseActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @MouseKeys.started += instance.OnMouseKeys;
-                @MouseKeys.performed += instance.OnMouseKeys;
-                @MouseKeys.canceled += instance.OnMouseKeys;
+                @PrimaryButton.started += instance.OnPrimaryButton;
+                @PrimaryButton.performed += instance.OnPrimaryButton;
+                @PrimaryButton.canceled += instance.OnPrimaryButton;
+                @SecondaryButton.started += instance.OnSecondaryButton;
+                @SecondaryButton.performed += instance.OnSecondaryButton;
+                @SecondaryButton.canceled += instance.OnSecondaryButton;
+                @ForwardButton.started += instance.OnForwardButton;
+                @ForwardButton.performed += instance.OnForwardButton;
+                @ForwardButton.canceled += instance.OnForwardButton;
+                @BackWardButton.started += instance.OnBackWardButton;
+                @BackWardButton.performed += instance.OnBackWardButton;
+                @BackWardButton.canceled += instance.OnBackWardButton;
             }
         }
     }
     public MouseActionsActions @MouseActions => new MouseActionsActions(this);
 
-    // OtherActions
-    private readonly InputActionMap m_OtherActions;
-    private IOtherActionsActions m_OtherActionsActionsCallbackInterface;
-    private readonly InputAction m_OtherActions_Newaction;
-    public struct OtherActionsActions
+    // KeyboardActions
+    private readonly InputActionMap m_KeyboardActions;
+    private IKeyboardActionsActions m_KeyboardActionsActionsCallbackInterface;
+    private readonly InputAction m_KeyboardActions_KeyboardActions;
+    public struct KeyboardActionsActions
     {
         private @PlayerControls m_Wrapper;
-        public OtherActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_OtherActions_Newaction;
-        public InputActionMap Get() { return m_Wrapper.m_OtherActions; }
+        public KeyboardActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @KeyboardActions => m_Wrapper.m_KeyboardActions_KeyboardActions;
+        public InputActionMap Get() { return m_Wrapper.m_KeyboardActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(OtherActionsActions set) { return set.Get(); }
-        public void SetCallbacks(IOtherActionsActions instance)
+        public static implicit operator InputActionMap(KeyboardActionsActions set) { return set.Get(); }
+        public void SetCallbacks(IKeyboardActionsActions instance)
         {
-            if (m_Wrapper.m_OtherActionsActionsCallbackInterface != null)
+            if (m_Wrapper.m_KeyboardActionsActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_OtherActionsActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_OtherActionsActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_OtherActionsActionsCallbackInterface.OnNewaction;
+                @KeyboardActions.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
+                @KeyboardActions.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
+                @KeyboardActions.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
             }
-            m_Wrapper.m_OtherActionsActionsCallbackInterface = instance;
+            m_Wrapper.m_KeyboardActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @KeyboardActions.started += instance.OnKeyboardActions;
+                @KeyboardActions.performed += instance.OnKeyboardActions;
+                @KeyboardActions.canceled += instance.OnKeyboardActions;
             }
         }
     }
-    public OtherActionsActions @OtherActions => new OtherActionsActions(this);
+    public KeyboardActionsActions @KeyboardActions => new KeyboardActionsActions(this);
     public interface IPlayerMouvementActions
     {
         void OnMouvement(InputAction.CallbackContext context);
     }
     public interface IMouseActionsActions
     {
-        void OnMouseKeys(InputAction.CallbackContext context);
+        void OnPrimaryButton(InputAction.CallbackContext context);
+        void OnSecondaryButton(InputAction.CallbackContext context);
+        void OnForwardButton(InputAction.CallbackContext context);
+        void OnBackWardButton(InputAction.CallbackContext context);
     }
-    public interface IOtherActionsActions
+    public interface IKeyboardActionsActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnKeyboardActions(InputAction.CallbackContext context);
     }
 }
