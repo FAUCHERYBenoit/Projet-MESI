@@ -23,6 +23,7 @@ public class InputManager : MonoBehaviour
     [SerializeField]
     private InputAction RightButtonAction;
 
+    // E , R , I , T , M , F , Shift
     [SerializeField]
     private InputAction InteractionButtonAction;
 
