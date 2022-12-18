@@ -36,8 +36,41 @@ public class InputManager : MonoBehaviour
     /// </summary>
     public bool BacwardAction { get { return bacwardAction; } }
 
-    // E , R , I , T , M , F , Shift
-
+    [SerializeField] private bool interactionAction = false;
+    /// <summary>
+    /// Key E
+    /// </summary>
+    public bool InteractionAction { get { return interactionAction; } }
+    [SerializeField] private bool reloadAction = false;
+    /// <summary>
+    /// Key R
+    /// </summary>
+    public bool ReloadAction { get { return reloadAction; } }
+    [SerializeField] private bool inventoryAction = false;
+    /// <summary>
+    /// Key I
+    /// </summary>
+    public bool InventoryAction { get { return inventoryAction; } }
+    [SerializeField] private bool skillTreeAction = false;
+    /// <summary>
+    /// Key T
+    /// </summary>
+    public bool SkillTreeAction { get { return skillTreeAction; } }
+    [SerializeField] private bool mapAction = false;
+    /// <summary>
+    /// Key M
+    /// </summary>
+    public bool MapAction { get { return mapAction; } }
+    [SerializeField] private bool useItemAction = false;
+    /// <summary>
+    /// Key F
+    /// </summary>
+    public bool UseItemAction { get { return useItemAction; } }
+    [SerializeField] private bool dashAction = false;
+    /// <summary>
+    /// Key Shift
+    /// </summary>
+    public bool DashAction { get { return dashAction; } }
 
     private void OnEnable()
     {
@@ -51,11 +84,20 @@ public class InputManager : MonoBehaviour
             playerControls = new PlayerControls();
 
             playerControls.PlayerMouvement.Mouvement.performed += i => movementInput = i.ReadValue<Vector2>();
-
+            //Assigning events to MouseActions
             playerControls.MouseActions.PrimaryButton.performed += i => primaryAction = true;
             playerControls.MouseActions.SecondaryButton.performed += i => secondaryAction = true;
             playerControls.MouseActions.ForwardButton.performed += i => forwardAction = true;
             playerControls.MouseActions.BackWardButton.performed += i => bacwardAction = true;
+
+            //Assigning events to keyBoardActions
+            playerControls.KeyboardActions.InteractionAction.performed += i => interactionAction = true;
+            playerControls.KeyboardActions.RelaodAction.performed += i => reloadAction = true;
+            playerControls.KeyboardActions.InteractionAction.performed += i => inventoryAction = true;
+            playerControls.KeyboardActions.SkillTreeAction.performed += i => skillTreeAction = true;
+            playerControls.KeyboardActions.MapAction.performed += i => mapAction = true;
+            playerControls.KeyboardActions.UseItemAction.performed += i => useItemAction = true;
+            playerControls.KeyboardActions.DashAction.performed += i => dashAction = true;
         }
 
         playerControls.Enable();
@@ -72,5 +114,13 @@ public class InputManager : MonoBehaviour
         secondaryAction = false;
         forwardAction = false;
         bacwardAction = false;
+
+        interactionAction = false;
+        reloadAction = false;
+        inventoryAction = false;
+        skillTreeAction = false;
+        mapAction = false;
+        useItemAction = false;
+        dashAction = false;
     }
 }

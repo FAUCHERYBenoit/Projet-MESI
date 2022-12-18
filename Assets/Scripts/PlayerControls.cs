@@ -188,9 +188,63 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
             ""id"": ""f24fd615-1230-4f06-b021-f00ce678e9a1"",
             ""actions"": [
                 {
-                    ""name"": ""KeyboardActions"",
+                    ""name"": ""InteractionAction"",
                     ""type"": ""Button"",
                     ""id"": ""262b0760-231d-4719-917f-ea963e303528"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RelaodAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3d48dc9-3e4c-4517-bfe8-69c70397f60c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InventoryAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""b7e22006-7c2f-4082-8ee0-ac88067c34c2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillTreeAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""5fa677a9-6ff8-4be0-8ed6-947166278548"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MapAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd3c0e1c-b566-4702-bb1e-5d187be2aecd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UseItemAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""757ca6a5-c082-4214-9629-edcb597cc22c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DashAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""9c88ec5a-f07c-4b05-982e-57f0259966af"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -205,7 +259,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""InteractionAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -216,7 +270,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""RelaodAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -227,18 +281,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""eb87a99f-8b67-4046-8390-6f9442e79baa"",
-                    ""path"": ""<Keyboard>/t"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""InventoryAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -249,7 +292,18 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""MapAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eb87a99f-8b67-4046-8390-6f9442e79baa"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillTreeAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -260,7 +314,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""UseItemAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -271,7 +325,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""KeyboardActions"",
+                    ""action"": ""DashAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -291,7 +345,13 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_MouseActions_BackWardButton = m_MouseActions.FindAction("BackWardButton", throwIfNotFound: true);
         // KeyboardActions
         m_KeyboardActions = asset.FindActionMap("KeyboardActions", throwIfNotFound: true);
-        m_KeyboardActions_KeyboardActions = m_KeyboardActions.FindAction("KeyboardActions", throwIfNotFound: true);
+        m_KeyboardActions_InteractionAction = m_KeyboardActions.FindAction("InteractionAction", throwIfNotFound: true);
+        m_KeyboardActions_RelaodAction = m_KeyboardActions.FindAction("RelaodAction", throwIfNotFound: true);
+        m_KeyboardActions_InventoryAction = m_KeyboardActions.FindAction("InventoryAction", throwIfNotFound: true);
+        m_KeyboardActions_SkillTreeAction = m_KeyboardActions.FindAction("SkillTreeAction", throwIfNotFound: true);
+        m_KeyboardActions_MapAction = m_KeyboardActions.FindAction("MapAction", throwIfNotFound: true);
+        m_KeyboardActions_UseItemAction = m_KeyboardActions.FindAction("UseItemAction", throwIfNotFound: true);
+        m_KeyboardActions_DashAction = m_KeyboardActions.FindAction("DashAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -441,12 +501,24 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     // KeyboardActions
     private readonly InputActionMap m_KeyboardActions;
     private IKeyboardActionsActions m_KeyboardActionsActionsCallbackInterface;
-    private readonly InputAction m_KeyboardActions_KeyboardActions;
+    private readonly InputAction m_KeyboardActions_InteractionAction;
+    private readonly InputAction m_KeyboardActions_RelaodAction;
+    private readonly InputAction m_KeyboardActions_InventoryAction;
+    private readonly InputAction m_KeyboardActions_SkillTreeAction;
+    private readonly InputAction m_KeyboardActions_MapAction;
+    private readonly InputAction m_KeyboardActions_UseItemAction;
+    private readonly InputAction m_KeyboardActions_DashAction;
     public struct KeyboardActionsActions
     {
         private @PlayerControls m_Wrapper;
         public KeyboardActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @KeyboardActions => m_Wrapper.m_KeyboardActions_KeyboardActions;
+        public InputAction @InteractionAction => m_Wrapper.m_KeyboardActions_InteractionAction;
+        public InputAction @RelaodAction => m_Wrapper.m_KeyboardActions_RelaodAction;
+        public InputAction @InventoryAction => m_Wrapper.m_KeyboardActions_InventoryAction;
+        public InputAction @SkillTreeAction => m_Wrapper.m_KeyboardActions_SkillTreeAction;
+        public InputAction @MapAction => m_Wrapper.m_KeyboardActions_MapAction;
+        public InputAction @UseItemAction => m_Wrapper.m_KeyboardActions_UseItemAction;
+        public InputAction @DashAction => m_Wrapper.m_KeyboardActions_DashAction;
         public InputActionMap Get() { return m_Wrapper.m_KeyboardActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -456,16 +528,52 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_KeyboardActionsActionsCallbackInterface != null)
             {
-                @KeyboardActions.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
-                @KeyboardActions.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
-                @KeyboardActions.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnKeyboardActions;
+                @InteractionAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInteractionAction;
+                @InteractionAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInteractionAction;
+                @InteractionAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInteractionAction;
+                @RelaodAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnRelaodAction;
+                @RelaodAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnRelaodAction;
+                @RelaodAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnRelaodAction;
+                @InventoryAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInventoryAction;
+                @InventoryAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInventoryAction;
+                @InventoryAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnInventoryAction;
+                @SkillTreeAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnSkillTreeAction;
+                @SkillTreeAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnSkillTreeAction;
+                @SkillTreeAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnSkillTreeAction;
+                @MapAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnMapAction;
+                @MapAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnMapAction;
+                @MapAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnMapAction;
+                @UseItemAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnUseItemAction;
+                @UseItemAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnUseItemAction;
+                @UseItemAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnUseItemAction;
+                @DashAction.started -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnDashAction;
+                @DashAction.performed -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnDashAction;
+                @DashAction.canceled -= m_Wrapper.m_KeyboardActionsActionsCallbackInterface.OnDashAction;
             }
             m_Wrapper.m_KeyboardActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @KeyboardActions.started += instance.OnKeyboardActions;
-                @KeyboardActions.performed += instance.OnKeyboardActions;
-                @KeyboardActions.canceled += instance.OnKeyboardActions;
+                @InteractionAction.started += instance.OnInteractionAction;
+                @InteractionAction.performed += instance.OnInteractionAction;
+                @InteractionAction.canceled += instance.OnInteractionAction;
+                @RelaodAction.started += instance.OnRelaodAction;
+                @RelaodAction.performed += instance.OnRelaodAction;
+                @RelaodAction.canceled += instance.OnRelaodAction;
+                @InventoryAction.started += instance.OnInventoryAction;
+                @InventoryAction.performed += instance.OnInventoryAction;
+                @InventoryAction.canceled += instance.OnInventoryAction;
+                @SkillTreeAction.started += instance.OnSkillTreeAction;
+                @SkillTreeAction.performed += instance.OnSkillTreeAction;
+                @SkillTreeAction.canceled += instance.OnSkillTreeAction;
+                @MapAction.started += instance.OnMapAction;
+                @MapAction.performed += instance.OnMapAction;
+                @MapAction.canceled += instance.OnMapAction;
+                @UseItemAction.started += instance.OnUseItemAction;
+                @UseItemAction.performed += instance.OnUseItemAction;
+                @UseItemAction.canceled += instance.OnUseItemAction;
+                @DashAction.started += instance.OnDashAction;
+                @DashAction.performed += instance.OnDashAction;
+                @DashAction.canceled += instance.OnDashAction;
             }
         }
     }
@@ -483,6 +591,12 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     }
     public interface IKeyboardActionsActions
     {
-        void OnKeyboardActions(InputAction.CallbackContext context);
+        void OnInteractionAction(InputAction.CallbackContext context);
+        void OnRelaodAction(InputAction.CallbackContext context);
+        void OnInventoryAction(InputAction.CallbackContext context);
+        void OnSkillTreeAction(InputAction.CallbackContext context);
+        void OnMapAction(InputAction.CallbackContext context);
+        void OnUseItemAction(InputAction.CallbackContext context);
+        void OnDashAction(InputAction.CallbackContext context);
     }
 }

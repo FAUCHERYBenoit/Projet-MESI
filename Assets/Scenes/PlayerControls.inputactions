@@ -166,9 +166,63 @@
             "id": "f24fd615-1230-4f06-b021-f00ce678e9a1",
             "actions": [
                 {
-                    "name": "KeyboardActions",
+                    "name": "InteractionAction",
                     "type": "Button",
                     "id": "262b0760-231d-4719-917f-ea963e303528",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RelaodAction",
+                    "type": "Button",
+                    "id": "e3d48dc9-3e4c-4517-bfe8-69c70397f60c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "InventoryAction",
+                    "type": "Button",
+                    "id": "b7e22006-7c2f-4082-8ee0-ac88067c34c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SkillTreeAction",
+                    "type": "Button",
+                    "id": "5fa677a9-6ff8-4be0-8ed6-947166278548",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MapAction",
+                    "type": "Button",
+                    "id": "fd3c0e1c-b566-4702-bb1e-5d187be2aecd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "UseItemAction",
+                    "type": "Button",
+                    "id": "757ca6a5-c082-4214-9629-edcb597cc22c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DashAction",
+                    "type": "Button",
+                    "id": "9c88ec5a-f07c-4b05-982e-57f0259966af",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -183,7 +237,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "InteractionAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -194,7 +248,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "RelaodAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -205,18 +259,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "eb87a99f-8b67-4046-8390-6f9442e79baa",
-                    "path": "<Keyboard>/t",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "InventoryAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -227,7 +270,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "MapAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb87a99f-8b67-4046-8390-6f9442e79baa",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkillTreeAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -238,7 +292,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "UseItemAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -249,7 +303,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "KeyboardActions",
+                    "action": "DashAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
