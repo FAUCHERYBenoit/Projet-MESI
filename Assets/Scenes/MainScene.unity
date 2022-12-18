@@ -704,6 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1789700387}
   - component: {fileID: 1789700388}
+  - component: {fileID: 1789700389}
   m_Layer: 0
   m_Name: TestPlayer
   m_TagString: Untagged
@@ -740,6 +741,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 00c90525a94bd724d95b601f38a3e59f, type: 2}
+--- !u!114 &1789700389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789700386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b391fd26a230e6d40b8244081cf2f9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementInput: {x: 0, y: 0}
+  primaryAction: 0
+  secondaryAction: 0
+  forwardAction: 0
+  bacwardAction: 0
+  interactionAction: 0
+  reloadAction: 0
+  inventoryAction: 0
+  skillTreeAction: 0
+  mapAction: 0
+  useItemAction: 0
+  dashAction: 0
 --- !u!1 &1954480115
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +886,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: -2.0000021, y: 3e-44, z: 3.1e-44, w: NaN}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0

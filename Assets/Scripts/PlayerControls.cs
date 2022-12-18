@@ -118,19 +118,10 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ForwardButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""14c716e3-83eb-46e0-8740-2c9a6327d884"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""BackWardButton"",
-                    ""type"": ""Button"",
-                    ""id"": ""81bb563d-da53-4cad-832c-7e47282bf50c"",
-                    ""expectedControlType"": ""Button"",
+                    ""name"": ""MouseWheel"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""327795fe-d6fa-485c-9dd1-9976e716b328"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -150,34 +141,23 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""06226fbf-b66f-4f2e-a85e-9001cc265208"",
-                    ""path"": ""<Mouse>/forwardButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ForwardButton"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6f2bf233-187e-4dc5-8fdb-b53d75652a60"",
-                    ""path"": ""<Mouse>/backButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""BackWardButton"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""2fb74755-8355-468e-bc0b-5f74d2eff6b4"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PrimaryButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""461ff72b-ea74-4166-917e-3b625023e195"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -341,8 +321,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_MouseActions = asset.FindActionMap("MouseActions", throwIfNotFound: true);
         m_MouseActions_PrimaryButton = m_MouseActions.FindAction("PrimaryButton", throwIfNotFound: true);
         m_MouseActions_SecondaryButton = m_MouseActions.FindAction("SecondaryButton", throwIfNotFound: true);
-        m_MouseActions_ForwardButton = m_MouseActions.FindAction("ForwardButton", throwIfNotFound: true);
-        m_MouseActions_BackWardButton = m_MouseActions.FindAction("BackWardButton", throwIfNotFound: true);
+        m_MouseActions_MouseWheel = m_MouseActions.FindAction("MouseWheel", throwIfNotFound: true);
         // KeyboardActions
         m_KeyboardActions = asset.FindActionMap("KeyboardActions", throwIfNotFound: true);
         m_KeyboardActions_InteractionAction = m_KeyboardActions.FindAction("InteractionAction", throwIfNotFound: true);
@@ -446,16 +425,14 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private IMouseActionsActions m_MouseActionsActionsCallbackInterface;
     private readonly InputAction m_MouseActions_PrimaryButton;
     private readonly InputAction m_MouseActions_SecondaryButton;
-    private readonly InputAction m_MouseActions_ForwardButton;
-    private readonly InputAction m_MouseActions_BackWardButton;
+    private readonly InputAction m_MouseActions_MouseWheel;
     public struct MouseActionsActions
     {
         private @PlayerControls m_Wrapper;
         public MouseActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @PrimaryButton => m_Wrapper.m_MouseActions_PrimaryButton;
         public InputAction @SecondaryButton => m_Wrapper.m_MouseActions_SecondaryButton;
-        public InputAction @ForwardButton => m_Wrapper.m_MouseActions_ForwardButton;
-        public InputAction @BackWardButton => m_Wrapper.m_MouseActions_BackWardButton;
+        public InputAction @MouseWheel => m_Wrapper.m_MouseActions_MouseWheel;
         public InputActionMap Get() { return m_Wrapper.m_MouseActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -471,12 +448,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SecondaryButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
                 @SecondaryButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
                 @SecondaryButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnSecondaryButton;
-                @ForwardButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
-                @ForwardButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
-                @ForwardButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnForwardButton;
-                @BackWardButton.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
-                @BackWardButton.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
-                @BackWardButton.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnBackWardButton;
+                @MouseWheel.started -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseWheel;
+                @MouseWheel.performed -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseWheel;
+                @MouseWheel.canceled -= m_Wrapper.m_MouseActionsActionsCallbackInterface.OnMouseWheel;
             }
             m_Wrapper.m_MouseActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -487,12 +461,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @SecondaryButton.started += instance.OnSecondaryButton;
                 @SecondaryButton.performed += instance.OnSecondaryButton;
                 @SecondaryButton.canceled += instance.OnSecondaryButton;
-                @ForwardButton.started += instance.OnForwardButton;
-                @ForwardButton.performed += instance.OnForwardButton;
-                @ForwardButton.canceled += instance.OnForwardButton;
-                @BackWardButton.started += instance.OnBackWardButton;
-                @BackWardButton.performed += instance.OnBackWardButton;
-                @BackWardButton.canceled += instance.OnBackWardButton;
+                @MouseWheel.started += instance.OnMouseWheel;
+                @MouseWheel.performed += instance.OnMouseWheel;
+                @MouseWheel.canceled += instance.OnMouseWheel;
             }
         }
     }
@@ -586,8 +557,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     {
         void OnPrimaryButton(InputAction.CallbackContext context);
         void OnSecondaryButton(InputAction.CallbackContext context);
-        void OnForwardButton(InputAction.CallbackContext context);
-        void OnBackWardButton(InputAction.CallbackContext context);
+        void OnMouseWheel(InputAction.CallbackContext context);
     }
     public interface IKeyboardActionsActions
     {
