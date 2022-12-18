@@ -37,7 +37,7 @@ namespace character
         /// <summary>
         /// backward wheel slider
         /// </summary>
-        public bool BacwardAction { get { return backwardAction; } }
+        public bool BackwardAction { get { return backwardAction; } }
 
         [SerializeField] private bool interactionAction = false;
         /// <summary>
@@ -131,7 +131,6 @@ namespace character
             {
                 Debug.Log("<color=orange> dash action </Color>");
             }
-
         }
 
         private void SetUpInputs()
