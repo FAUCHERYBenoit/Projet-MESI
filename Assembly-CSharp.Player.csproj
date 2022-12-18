@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
@@ -67,6 +68,11 @@
     <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
+=======
+    <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\PlayerControls.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+>>>>>>> origin/develop
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -666,6 +672,7 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>D:\Unity\2021.3.13f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
@@ -708,20 +715,43 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
+=======
+>>>>>>> origin/develop
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.Player.csproj">
       <Project>{EAE74B21-1B94-A6FB-4721-B83B806C8118}</Project>
       <Name>Unity.RenderPipelines.Universal.Shaders.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="Unity.InputSystem.Player.csproj">
+      <Project>{FC1BA666-6609-0CED-6D13-091F66C6D008}</Project>
+      <Name>Unity.InputSystem.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.Player.csproj">
       <Project>{C87D91D4-9A39-BDCB-6CD9-E073D4863954}</Project>
       <Name>Unity.RenderPipelines.Core.ShaderLibrary.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="UnityEngine.SpatialTracking.Player.csproj">
+      <Project>{964B65D9-1FD7-B325-4C41-FE3A76AD22F1}</Project>
+      <Name>UnityEngine.SpatialTracking.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{AC4EC7D3-B2DC-0933-D334-2BFD1B99BA98}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="Cinemachine.Player.csproj">
+      <Project>{7E80B30F-10D9-DE45-A08D-B791870CC060}</Project>
+      <Name>Cinemachine.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
       <Project>{C88631E1-6DCB-39F7-BC05-ABCCB942AFBD}</Project>
       <Name>Unity.RenderPipeline.Universal.ShaderLibrary.Player</Name>
@@ -730,14 +760,67 @@
       <Project>{EE16177F-9FD7-8AF7-8354-5C5B67154A6B}</Project>
       <Name>Unity.RenderPipelines.Universal.Runtime.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="Unity.Timeline.Player.csproj">
+      <Project>{2B67FDE3-575D-62A6-4DF6-5675B4E88A76}</Project>
+      <Name>Unity.Timeline.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
+      <Project>{C8E2949F-7797-3EE1-3AB7-DF9227F7D0FB}</Project>
+      <Name>Unity.TextMeshPro.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Player.csproj">
       <Project>{A6EDB702-9104-D0CF-B59C-DCA923AEF360}</Project>
       <Name>Unity.RenderPipelines.Core.Runtime.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
+      <Project>{64C78596-66C8-79BA-8D41-6ADA6EE3C965}</Project>
+      <Name>Unity.VisualScripting.Flow.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Player.csproj">
+      <Project>{409E830F-D1B6-087D-9008-DE31CDC3ADE4}</Project>
+      <Name>Unity.Services.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
+      <Project>{8BDF9373-EECB-07CE-315E-6131B4D77928}</Project>
+      <Name>Unity.VisualScripting.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Player.csproj">
+      <Project>{0D6CACB8-8939-31EE-5317-0E28305E8345}</Project>
+      <Name>Unity.Mathematics.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Analytics.Player.csproj">
+      <Project>{94E7477C-C068-435F-67A8-31887890FC5D}</Project>
+      <Name>Unity.Services.Core.Analytics.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Player.csproj">
+      <Project>{43B42743-C800-ECF4-1CB0-034116511CF4}</Project>
+      <Name>Unity.Burst.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.Player.csproj">
+      <Project>{1713BBFC-6E95-9592-6044-02D17FAA6520}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Services.Core.Environments.Player.csproj">
+      <Project>{181C7200-62FC-13CA-C2AC-70645CF2DB9F}</Project>
+      <Name>Unity.Services.Core.Environments.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
       <Project>{5B556706-C6E2-F04C-8230-01FCF23DB8D2}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
     </ProjectReference>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
+      <Project>{C710155F-F2CF-08DA-FBCA-36ADEE43A8DD}</Project>
+      <Name>Unity.VisualScripting.State.Player</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

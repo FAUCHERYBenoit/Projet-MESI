@@ -881,11 +881,20 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>D:\Unity\2021.3.13f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+=======
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.InputSystem.csproj">
+      <Project>{0E5CD3B1-6720-787C-7DDD-1AB3EDB9CD87}</Project>
+      <Name>Unity.InputSystem</Name>
+    </ProjectReference>
+>>>>>>> origin/develop
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{C78F8C90-B95D-3908-556F-8CC255FD5B7A}</Project>
       <Name>UnityEditor.UI</Name>
