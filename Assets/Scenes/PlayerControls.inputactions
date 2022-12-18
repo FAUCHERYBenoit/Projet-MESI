@@ -96,19 +96,10 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ForwardButton",
-                    "type": "Button",
-                    "id": "14c716e3-83eb-46e0-8740-2c9a6327d884",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "BackWardButton",
-                    "type": "Button",
-                    "id": "81bb563d-da53-4cad-832c-7e47282bf50c",
-                    "expectedControlType": "Button",
+                    "name": "MouseWheel",
+                    "type": "PassThrough",
+                    "id": "327795fe-d6fa-485c-9dd1-9976e716b328",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -128,34 +119,23 @@
                 },
                 {
                     "name": "",
-                    "id": "06226fbf-b66f-4f2e-a85e-9001cc265208",
-                    "path": "<Mouse>/forwardButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ForwardButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6f2bf233-187e-4dc5-8fdb-b53d75652a60",
-                    "path": "<Mouse>/backButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "BackWardButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "2fb74755-8355-468e-bc0b-5f74d2eff6b4",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "PrimaryButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "461ff72b-ea74-4166-917e-3b625023e195",
+                    "path": "<Mouse>/scroll/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MouseWheel",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
