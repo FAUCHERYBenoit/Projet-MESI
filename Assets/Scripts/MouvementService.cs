@@ -4,27 +4,45 @@ using UnityEngine;
 
 public class MouvementService : MonoBehaviour
 {
+    [Header("Speed/Timer")]
     public float speed = 10.0f;
+    public float dashTimer = 10f;
+    public float dashIntensity = 1000f;
+
+    [Header("MouvementParam")]
     public Rigidbody rb;
     public Vector2 movement;
+    public bool canMove = true;
+    
 
     // Use this for initialization
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
     }
+   
+    public void moveCharacter(Vector2 direction)
+    {
+        if(canMove)
+        {
+            rb.velocity = direction * speed;
+        }
+    }
 
-    // Update is called once per frame
-    void Update()
+    public void Dash(Vector3 direction)
     {
-        movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        if (canMove)
+        {
+            canMove= false;
+            rb.AddForce(direction*dashIntensity);
+            StartCoroutine(DashTimer());
+        }
     }
-    void FixedUpdate()
+
+    IEnumerator DashTimer()
     {
-        moveCharacter(movement);
-    }
-    void moveCharacter(Vector2 direction)
-    {
-        rb.velocity = direction * speed;
+        yield return new WaitForSeconds(dashTimer);
+        canMove = true;
+        yield return null;
     }
 }
