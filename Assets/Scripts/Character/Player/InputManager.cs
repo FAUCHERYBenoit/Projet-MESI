@@ -85,8 +85,26 @@ namespace character
             SetUpInputs();
         }
 
+        void FixedUpdate()
+        {
+            if(MovementInput.x != 0 || MovementInput.y != 0)
+            {
+                playerManager.MovePlayer(MovementInput);
+            }
+        }
+
+
+
+
         private void Update()
         {
+
+            if (dashAction)
+            {
+                playerManager.Dash(movementInput);
+                Debug.Log("<color=orange> dash action </Color>");
+            }
+
             if (primaryAction)
             {
                 Debug.Log("<color=orange> primary action </Color>");
@@ -127,10 +145,7 @@ namespace character
             {
                 Debug.Log("<color=orange> use action </Color>");
             }
-            if (dashAction)
-            {
-                Debug.Log("<color=orange> dash action </Color>");
-            }
+            
         }
 
         private void SetUpInputs()
