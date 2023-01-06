@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
+using messages;
 
 namespace UI
 {
@@ -22,9 +23,11 @@ namespace UI
         List<VisualElement> bulletsLeft = new List<VisualElement>();
         BulletTypes currentBulletType = BulletTypes.normal;
         StyleBackground currentSprite;
+        StyleSheet styleSheet;
 
         public void ReceiveMessage(BulletContainerMessage bulletContainerMessage)
         {
+            styleSheet = bulletContainerMessage.styleSheet;
             if(bulletContainerMessage.bulletTypes != currentBulletType)
             {
                 int bulletDelta = bulletsLeft.Count - bulletContainerMessage.amount;
@@ -61,6 +64,8 @@ namespace UI
                 for(int i = 0; i < amount; i++)
                 {
                     VisualElement VE = new VisualElement();
+                    VE.styleSheets.Add(styleSheet);
+                    VE.AddToClassList("Ammo");
                     VE.style.backgroundImage = currentSprite;
                     bulletsLeft.Add(VE);
                 }
@@ -69,26 +74,37 @@ namespace UI
     }
 }
 
-public class BulletContainerMessage : GameToUIMessage
+namespace messages
 {
-    public BulletContainerMessage(int amount, BulletTypes bulletTypes)
+    public class BulletContainerMessage : GameToUIMessage
     {
-        this.amount = amount;
-        this.bulletTypes = bulletTypes;
+        public BulletContainerMessage(int amount, BulletTypes bulletTypes)
+        {
+            this.amount = amount;
+            this.bulletTypes = bulletTypes;
+        }
+
+        public int amount { get; private set; }
+        public BulletTypes bulletTypes { get; private set; }
+        public Sprite bulletSprite { get; private set; }
+
+        public void AddBulletImage(Sprite bulletSprite)
+        {
+            this.bulletSprite = bulletSprite;
+        }
     }
 
-    public int amount { get; private set; }
-    public BulletTypes bulletTypes { get; private set; }
-    public Sprite bulletSprite { get; private set; }
-
-    public void AddBulletImage(Sprite bulletSprite)
+    [Serializable]
+    public class BulletStyles
     {
-        this.bulletSprite = bulletSprite;
+        public BulletTypes bulletTypes;
+        public Sprite sprite;
+    }
+
+    public enum BulletTypes
+    {
+        normal, special
     }
 }
 
-public enum BulletTypes
-{
-    normal, special
-}
 
