@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
+    <Compile Include="Assets\UI\BulletContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\UI\UXML\PlayerUI.uxml" />
