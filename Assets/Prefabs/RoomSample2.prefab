@@ -122,6 +122,10 @@ MonoBehaviour:
   - {fileID: 6738377097092616554, guid: 7df7eaee8e2361946886880631b2d1b9, type: 3}
   - {fileID: 9011341544649413658}
   - {fileID: 5988926097112273473, guid: 021eb88433d7b5c4caae13150a6cf910, type: 3}
+  roomNextToTop: {fileID: 0}
+  roomNextToBottom: {fileID: 0}
+  roomNextToRight: {fileID: 0}
+  roomNextToLeft: {fileID: 0}
 --- !u!1 &9011341545466017334
 GameObject:
   m_ObjectHideFlags: 0
