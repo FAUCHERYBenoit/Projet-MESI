@@ -8,9 +8,21 @@ namespace UI
 {
     public class UIManager : AbstractManager
     {
+        BulletContainer bulletContainer;
+
+        public void Init()
+        {
+            ///
+        }
+
         public void HandleMessage(GameToUIMessage gameToUIMessage)
         {
-            throw new NotImplementedException();
+            switch (gameToUIMessage)
+            {
+                case BulletContainerMessage bulletContainerMessage:
+                    bulletContainer.ReceiveMessage(bulletContainerMessage);
+                    break;
+            }
         }
 
         public override void SendAMessage(Message message)
