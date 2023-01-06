@@ -56,25 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\PlayerControls.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\InputManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
-    <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
-    <Compile Include="Assets\UI\UIManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
-    <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\MouvementService.cs" />
-    <Compile Include="Assets\UI\BulletContainer.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\UI\UXML\PlayerUI.uxml" />
-    <None Include="Assets\UI\UXML\GameStyle.uss" />
+    <Compile Include="Assets\TestUIManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -745,6 +727,10 @@
     <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player.csproj">
       <Project>{5B556706-C6E2-F04C-8230-01FCF23DB8D2}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Gameplay_ass.Player.csproj">
+      <Project>{354658F4-365A-464E-E405-C88F796F088D}</Project>
+      <Name>Gameplay_ass.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
