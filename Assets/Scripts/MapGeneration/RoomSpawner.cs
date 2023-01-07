@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -62,21 +64,90 @@ public class RoomSpawner : MonoBehaviour
                     Instantiate(templates.closedRoom, transform.position, templates.closedRoom.transform.rotation);
                 }
                 hasSpawned = true;
+                Destroy(gameObject);
             }
             catch (NullReferenceException)
             {
-
+                if (!hasSpawned)
+                {
+                    hasSpawned = true;
+                    RepareDoorOnWalls(other.GetComponent<RoomScript>().directions);
+                }
             }
-            Destroy(gameObject);
-            // TODO faire une chambre secrete
-        }
-        else if (other.CompareTag("Room"))
-        {
-            // Régler les portes qui donnent sur un mur
         }
     }
-}
-public enum Direction
-{
-    TOP, RIGHT, BOTTOM, LEFT
+
+    void RepareDoorOnWalls(List<Direction> other)
+    {
+        switch (openingDirection)
+        {
+            case Direction.TOP:
+                if (!other.Contains(Direction.BOTTOM))
+                {
+                    ReplaceRoom();
+                }
+                break;
+            case Direction.BOTTOM:
+                if (!other.Contains(Direction.TOP))
+                {
+                    ReplaceRoom();
+                }
+                break;
+            case Direction.LEFT:
+                if (!other.Contains(Direction.RIGHT))
+                {
+                    ReplaceRoom();
+                }
+                break;
+            case Direction.RIGHT:
+                if (!other.Contains(Direction.LEFT))
+                {
+                    ReplaceRoom();
+                }
+                break;
+        }
+    }
+
+    void ReplaceRoom()
+    {
+        GameObject parentRoom = gameObject.transform.parent.gameObject;
+        List<Direction> roomDirs = parentRoom.GetComponentInChildren<RoomScript>().directions;
+        roomDirs.Remove(openingDirection);
+        GameObject[] templatesRoomSide = templates.topRooms;
+
+        switch (roomDirs[0])
+        {
+            case Direction.TOP:
+                templatesRoomSide = templates.topRooms;
+                break;
+            case Direction.BOTTOM:
+                templatesRoomSide = templates.bottomRooms;
+                break;
+            case Direction.LEFT:
+                templatesRoomSide = templates.leftRooms;
+                break;
+            case Direction.RIGHT:
+                templatesRoomSide = templates.rightRooms;
+                break;
+        }
+
+        //Replace current room
+        foreach (var room in templatesRoomSide)
+        {
+            List<Direction> wantedRoomDirs = new List<Direction>();
+            foreach (var dir in room.GetComponentsInChildren<RoomSpawner>())
+            {
+                wantedRoomDirs.Add(dir.openingDirection);
+            }
+
+            bool isEqual = Enumerable.SequenceEqual(roomDirs.OrderBy(e => e), wantedRoomDirs.OrderBy(e => e));
+
+            if (isEqual)
+            {
+                var obj = Instantiate(room, parentRoom.transform.position, room.transform.rotation);
+                break;
+            }
+        }
+        Destroy(parentRoom);
+    }
 }

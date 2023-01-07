@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8886552223698173804}
   - component: {fileID: 2872686057033260386}
   - component: {fileID: 5520615916475542477}
+  - component: {fileID: 8200992731411143830}
   m_Layer: 0
   m_Name: RoomSpawnPoint
   m_TagString: SpawnPoint
@@ -62,6 +63,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8200992731411143830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2734597336350061762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c3b4a7c17daec945a974c74c49e1791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  directions: 
 --- !u!1 &5164362758310939265
 GameObject:
   m_ObjectHideFlags: 0

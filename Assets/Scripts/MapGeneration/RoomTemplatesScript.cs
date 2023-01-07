@@ -14,6 +14,9 @@ public class RoomTemplatesScript : MonoBehaviour
     public List<GameObject> rooms;
 
     [SerializeField]
+    private GameObject baseRoom;
+
+    [SerializeField]
     private GameObject boss;
     [SerializeField]
     private GameObject firstRoomIndicator;
@@ -28,8 +31,21 @@ public class RoomTemplatesScript : MonoBehaviour
     private IEnumerator waitForGenerated()
     {
         yield return new WaitForSeconds(waitTime);
-        //Génère le boss dans la dernière salle & un point bleu dans la première
-        Instantiate(firstRoomIndicator, rooms[0].transform.position, rooms[0].transform.rotation);
-        Instantiate(boss, rooms[rooms.Count - 1].transform.position, rooms[rooms.Count - 1].transform.rotation);
+        if(rooms.Count < 10)
+        {
+            foreach (var item in rooms)
+            {
+                Destroy(item);
+            }
+            rooms = new List<GameObject>();
+            Instantiate(baseRoom, Vector3.zero, baseRoom.transform.rotation);
+            StartCoroutine(waitForGenerated());
+        }
+        else
+        {
+            //Génère le boss dans la dernière salle & un point bleu dans la première
+            Instantiate(firstRoomIndicator, rooms[0].transform.position, rooms[0].transform.rotation);
+            Instantiate(boss, rooms[rooms.Count - 1].transform.position, rooms[rooms.Count - 1].transform.rotation);
+        }
     }
 }
