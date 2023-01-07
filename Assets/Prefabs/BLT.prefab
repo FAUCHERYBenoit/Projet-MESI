@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368488383494867544}
   - component: {fileID: 368488383494867545}
+  - component: {fileID: -3363036690559027463}
   m_Layer: 0
   m_Name: BLT
   m_TagString: Untagged
@@ -89,6 +90,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3363036690559027463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368488383494867543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0163999c3fa0fc43bf53ca90e3109c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &368488383975446801
 GameObject:
   m_ObjectHideFlags: 0

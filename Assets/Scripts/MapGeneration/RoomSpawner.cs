@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomSpawner : MonoBehaviour
 {
@@ -53,13 +55,23 @@ public class RoomSpawner : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
-            if(!other.GetComponent<RoomSpawner>().hasSpawned && !hasSpawned)
+            try
             {
-                Instantiate(templates.closedRoom, transform.position, templates.closedRoom.transform.rotation);
-                Destroy(gameObject);
+                if (!other.GetComponent<RoomSpawner>().hasSpawned && !hasSpawned)
+                {
+                    Instantiate(templates.closedRoom, transform.position, templates.closedRoom.transform.rotation);
+                }
+                hasSpawned = true;
             }
-            hasSpawned = true;
-            //TODO faire une chambre secrete
+            catch (NullReferenceException)
+            {
+
+            }
+            Destroy(gameObject);
+            // TODO faire une chambre secrete
+        }
+        else if (other.CompareTag("Room"))
+        {
             // Régler les portes qui donnent sur un mur
         }
     }

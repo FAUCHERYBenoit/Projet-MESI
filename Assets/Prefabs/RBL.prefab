@@ -372,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1249563362453135735}
   - component: {fileID: 1249563362453135736}
+  - component: {fileID: -3629642122806754503}
   m_Layer: 0
   m_Name: RBL
   m_TagString: Untagged
@@ -451,6 +452,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3629642122806754503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249563362453135734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0163999c3fa0fc43bf53ca90e3109c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3235063462873092338
 GameObject:
   m_ObjectHideFlags: 0

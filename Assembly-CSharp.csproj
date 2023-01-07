@@ -56,15 +56,15 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DoorScript.cs" />
-    <Compile Include="Assets\Scripts\RoomSpawner.cs" />
-    <Compile Include="Assets\Scripts\RoomTemplatesScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomTemplatesScript.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\Character\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
-    <Compile Include="Assets\Scripts\RoomSelectorScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomSelectorScript.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
     <Compile Include="Assets\Scripts\MouvementService.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
@@ -74,6 +74,8 @@
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
+    <Compile Include="Assets\ClosedRoomScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\AddRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
