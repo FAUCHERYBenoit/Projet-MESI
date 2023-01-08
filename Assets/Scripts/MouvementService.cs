@@ -25,7 +25,8 @@ public class MouvementService : MonoBehaviour
     {
         if(canMove)
         {
-            rb.velocity = direction * speed;
+            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            rb.velocity = newDir * speed;
         }
     }
 
@@ -34,7 +35,8 @@ public class MouvementService : MonoBehaviour
         if (canMove)
         {
             canMove= false;
-            rb.AddForce(direction*dashIntensity);
+            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            rb.AddForce(newDir*dashIntensity);
             StartCoroutine(DashTimer());
         }
     }

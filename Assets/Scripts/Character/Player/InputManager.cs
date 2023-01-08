@@ -105,7 +105,7 @@ namespace character
                 Debug.Log("<color=orange> dash action </Color>");
             }
 
-            if (primaryAction)
+            /*if (primaryAction)
             {
                 Debug.Log("<color=orange> primary action </Color>");
             }
@@ -144,7 +144,7 @@ namespace character
             if (useItemAction)
             {
                 Debug.Log("<color=orange> use action </Color>");
-            }
+            }*/
             
         }
 
