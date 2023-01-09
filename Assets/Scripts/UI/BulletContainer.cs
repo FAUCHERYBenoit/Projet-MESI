@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 using messages;
@@ -10,7 +9,7 @@ namespace UI
 {
     public class BulletContainer : VisualElement
     {
-        public new class UxmlFactory : UxmlFactory<BulletContainer, GraphView.UxmlTraits>
+        public new class UxmlFactory : UxmlFactory<BulletContainer, VisualElement.UxmlTraits>
         {
 
         }
@@ -56,8 +55,12 @@ namespace UI
         {
             if (amount < 0)
             {
-                int startPos = (bulletsLeft.Count - 1) - amount;
-                bulletsLeft.RemoveRange(startPos, amount);
+                int startPos = (bulletsLeft.Count - 1) + amount;
+                bulletsLeft.RemoveRange(startPos, -amount);
+                for (int i = startPos; i < bulletsLeft.Count; i++)
+                {
+                    RemoveAt(i);
+                }
             }
             else if (amount > 0)
             {
@@ -68,6 +71,7 @@ namespace UI
                     VE.AddToClassList("Ammo");
                     VE.style.backgroundImage = currentSprite;
                     bulletsLeft.Add(VE);
+                    Add(VE);
                 }
             }
         }
@@ -78,6 +82,11 @@ namespace messages
 {
     public class BulletContainerMessage : GameToUIMessage
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="amount">Differencial of ammo</param>
+        /// <param name="bulletTypes">type of bullets</param>
         public BulletContainerMessage(int amount, BulletTypes bulletTypes)
         {
             this.amount = amount;

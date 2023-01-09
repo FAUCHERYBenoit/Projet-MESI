@@ -62,15 +62,15 @@
     <Compile Include="Assets\Scripts\Character\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
+    <Compile Include="Assets\Scripts\MouvementService.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\BulletContainer.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\MouvementService.cs" />
-    <Compile Include="Assets\Scripts\UI\BulletContainer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />

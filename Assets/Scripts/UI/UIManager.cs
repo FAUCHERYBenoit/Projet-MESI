@@ -15,16 +15,16 @@ namespace UI
         [SerializeField] private StyleSheet styleSheet;
 
         [Header("Sprites refs")]
-        private List<BulletStyles> bulletStyles = new List<BulletStyles>();
+        [SerializeField] private List<BulletStyles> bulletStyles = new List<BulletStyles>();
 
         [Header("Monobehaviours")]
         [SerializeField] private UIDocument document = null;
 
         private VisualElement root = null;
-        private BulletContainer bulletContainer = null;
-        private ProgressBar healthBar = null;
-        private ProgressBar armorBar = null;
-        private Label moneyAmount = null;
+        public BulletContainer bulletContainer { get; private set; }
+        public ProgressBar healthBar {get; private set;}
+        public ProgressBar armorBar { get; private set; }
+        public Label moneyAmount { get; private set; }
         public void Awake()
         {
             if (document == null)
@@ -33,7 +33,7 @@ namespace UI
             }
 
             root = document.rootVisualElement;
-            bulletContainer = root.Q<BulletContainer>("BulletConatiner");
+            bulletContainer = root.Q<BulletContainer>("BulletContainer");
             healthBar = root.Q<ProgressBar>("LifeBar");
             armorBar = root.Q<ProgressBar>("ArmorBar");
             moneyAmount = root.Q<Label>("MoneyAmount");
@@ -73,9 +73,11 @@ namespace UI
             {
                 case BarType.Life:
                     healthBar.value = progressBarMessage.value;
+                    healthBar.highValue = progressBarMessage.maxValue;
                     break;
                 case BarType.Armor:
                     armorBar.value = progressBarMessage.value;
+                    armorBar.highValue = progressBarMessage.maxValue;
                     break;
             }
         }
@@ -94,13 +96,15 @@ namespace messages
         /// </summary>
         /// <param name="value">the current amount between 0 and 100</param>
         /// <param name="barType"></param>
-        public ProgressBarMessage(float value, BarType barType)
+        public ProgressBarMessage(float value, float maxValue, BarType barType)
         {
             this.value = value;
+            this.maxValue = maxValue;
             this.barType = barType;
         }
 
         public float value { get; private set; }
+        public float maxValue { get; private set; }
         public BarType barType { get; private set; }
     }
 
