@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UI;
 using audio;
+using messages;
+using System.Threading.Tasks;
 
 public class GameManager : AbstractManager
 {
@@ -23,10 +25,10 @@ public class GameManager : AbstractManager
     #endregion
 
     [SerializeField] private UIManager uIManager;
-    public UIManager GetUIManager { get; private set; }
+    public UIManager GetUIManager { get { return uIManager; }}
 
     [SerializeField] private AudioManager audioManager;
-    public AudioManager GetAudioManager { get; private set; }
+    public AudioManager GetAudioManager { get { return audioManager; } }
 
     /// <summary>
     /// Use this methods to handle any messages 
