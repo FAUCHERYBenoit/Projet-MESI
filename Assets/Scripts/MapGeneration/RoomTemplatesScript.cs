@@ -22,6 +22,9 @@ public class RoomTemplatesScript : MonoBehaviour
     private GameObject firstRoomIndicator;
     [SerializeField]
     private float waitTime;
+    [SerializeField]
+    private int minRoomCount;
+
 
     private void Start()
     {
@@ -31,7 +34,7 @@ public class RoomTemplatesScript : MonoBehaviour
     private IEnumerator waitForGenerated()
     {
         yield return new WaitForSeconds(waitTime);
-        if(rooms.Count < 10)
+        if(rooms.Count < minRoomCount)
         {
             foreach (var item in rooms)
             {
