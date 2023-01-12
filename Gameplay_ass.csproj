@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2021.3.13f1</UnityVersion>
@@ -71,6 +71,14 @@
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomSelectorScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\Direction.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\RoomTemplatesScript.cs" />
+    <Compile Include="Assets\Scripts\MapGeneration\AddRoom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />
