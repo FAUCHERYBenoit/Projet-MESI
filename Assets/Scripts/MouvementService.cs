@@ -25,7 +25,12 @@ public class MouvementService : MonoBehaviour
     {
         if(canMove)
         {
+<<<<<<< HEAD
             rb.velocity = direction * speed;
+=======
+            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            rb.velocity = newDir * speed;
+>>>>>>> e955cacb89fcc82cc1416b81d44441cf18bc6a57
         }
     }
 
@@ -34,7 +39,12 @@ public class MouvementService : MonoBehaviour
         if (canMove)
         {
             canMove= false;
+<<<<<<< HEAD
             rb.AddForce(direction*dashIntensity);
+=======
+            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            rb.AddForce(newDir*dashIntensity);
+>>>>>>> e955cacb89fcc82cc1416b81d44441cf18bc6a57
             StartCoroutine(DashTimer());
         }
     }
