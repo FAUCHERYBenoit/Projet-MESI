@@ -105,11 +105,7 @@ namespace character
                 Debug.Log("<color=orange> dash action </Color>");
             }
 
-<<<<<<< HEAD
             if (primaryAction)
-=======
-            /*if (primaryAction)
->>>>>>> e955cacb89fcc82cc1416b81d44441cf18bc6a57
             {
                 Debug.Log("<color=orange> primary action </Color>");
             }
@@ -148,13 +144,10 @@ namespace character
             if (useItemAction)
             {
                 Debug.Log("<color=orange> use action </Color>");
-<<<<<<< HEAD
             }
-=======
-            }*/
->>>>>>> e955cacb89fcc82cc1416b81d44441cf18bc6a57
-            
         }
+            
+        
 
         private void SetUpInputs()
         {
