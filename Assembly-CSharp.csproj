@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MapGeneration\DoorScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\Crosshair\LookCrosshair.cs" />
     <Compile Include="Assets\Scripts\MouvementService.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\RoomTemplatesScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\Direction.cs" />
@@ -78,8 +79,8 @@
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\RoomSelectorScript.cs" />
+    <Compile Include="Assets\Scripts\Character\Player\Crossahair.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
-    <Compile Include="Assets\Scripts\Crosshair\LookCrosshair.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

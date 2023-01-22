@@ -17,5 +17,9 @@ public class LookCrosshair : MonoBehaviour
         Vector2 direction = mousePosition - transform.position;
         float angle = Vector2.SignedAngle(Vector2.right, direction);
         transform.eulerAngles = new Vector3(0, 0, angle);
+        Debug.Log("mousePosition" + mousePosition);
+        Debug.Log("direction" + direction);
+        Debug.Log("angle" + angle);
+        Debug.Log(" transform.eulerAngles" + transform.eulerAngles);
     }
 }

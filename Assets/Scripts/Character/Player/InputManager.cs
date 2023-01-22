@@ -93,11 +93,22 @@ namespace character
             }
         }
 
-
-
-
-        private void Update()
+        private void LookAtCrosshair()
         {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint((new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f)));
+            Vector2 direction = mousePosition - transform.position;
+            float angle = Vector2.SignedAngle(Vector2.right, direction);
+            transform.eulerAngles = new Vector3(0, 0, angle);
+            Debug.Log("mousePosition" + mousePosition);
+            Debug.Log("direction" + direction);
+            Debug.Log("angle" + angle);
+            Debug.Log(" transform.eulerAngles" + transform.eulerAngles);
+        }
+
+
+        void Update()
+        {
+            LookAtCrosshair();
 
             if (dashAction)
             {
@@ -144,7 +155,7 @@ namespace character
             if (useItemAction)
             {
                 Debug.Log("<color=orange> use action </Color>");
-            }
+            }           
         }
             
         
