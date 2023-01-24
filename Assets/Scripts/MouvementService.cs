@@ -43,6 +43,15 @@ public class MouvementService : MonoBehaviour
         }
     }
 
+    public void RotatePlayer(Transform transform)
+    {
+        Debug.Log("Been there");
+        Vector3 direction = transform.position - this.transform.position;
+        float angle = Vector2.SignedAngle(Vector2.right, direction);
+        Debug.Log("angle value is " + angle);   
+        this.transform.eulerAngles = new Vector3(0, 0, angle);
+    }
+
     IEnumerator DashTimer()
     {
         yield return new WaitForSeconds(dashTimer);
