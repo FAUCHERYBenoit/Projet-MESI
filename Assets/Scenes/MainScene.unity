@@ -249,7 +249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 491526764}
-  - {fileID: 481247660}
+  - {fileID: 481247662}
   - {fileID: 1645704136}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -359,8 +359,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 481247660}
+  - component: {fileID: 481247662}
   - component: {fileID: 481247661}
+  - component: {fileID: 481247663}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -368,7 +369,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &481247660
+--- !u!114 &481247661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481247659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84eb265dfb3a3e44e92109404ea7fadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  styleSheet: {fileID: 7433441132597879392, guid: ee73f5974c23b00408ab52687ed06ac8, type: 3}
+  bulletStyles:
+  - bulletTypes: 0
+    sprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  - bulletTypes: 1
+    sprite: {fileID: 21300000, guid: ec03f79379868c642b48ae5ddc821b6d, type: 3}
+  document: {fileID: 481247663}
+--- !u!4 &481247662
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -383,7 +403,7 @@ Transform:
   m_Father: {fileID: 223141078}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &481247661
+--- !u!114 &481247663
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -392,9 +412,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 481247659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84eb265dfb3a3e44e92109404ea7fadc, type: 3}
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PanelSettings: {fileID: 11400000, guid: 523c8da98025e604e95cbf4cfed951d5, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 6c7eaf9504fb60c47b0f2b309be6cf6e, type: 3}
+  m_SortingOrder: 0
 --- !u!1 &491526763
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 00c90525a94bd724d95b601f38a3e59f, type: 2}
+  mouvementService: {fileID: 0}
 --- !u!114 &1789700389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,7 +782,7 @@ MonoBehaviour:
   primaryAction: 0
   secondaryAction: 0
   forwardAction: 0
-  bacwardAction: 0
+  backwardAction: 0
   interactionAction: 0
   reloadAction: 0
   inventoryAction: 0
