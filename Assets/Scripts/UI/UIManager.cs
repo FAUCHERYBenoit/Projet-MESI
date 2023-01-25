@@ -49,7 +49,7 @@ namespace UI
                     {
                         bulletContainerMessage.AddBulletImage(bulletStyles.Where(ss => ss.bulletTypes == bulletContainerMessage.bulletTypes).First().sprite);
                     }
-                    catch(Exception e){ Debug.Log("<color=yellow> please check your sprites in ThemeStyleSheet UIMAnager </color>"); }
+                    catch(Exception){ Debug.Log("<color=yellow> please check your sprites in ThemeStyleSheet UIMAnager </color>"); }
 
                     bulletContainer.ReceiveMessage(bulletContainerMessage);
                     break;
