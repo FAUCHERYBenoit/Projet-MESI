@@ -12,6 +12,10 @@ namespace character
         {
             new Stat(StatTypes.Life, 0),
             new Stat(StatTypes.Stamina, 0),
+            new Stat(StatTypes.Damage, 0),
+            new Stat(StatTypes.Speed, 0),
+            new Stat(StatTypes.Experience, 0),
+            new Stat(StatTypes.FOV, 0)
         };
 
         /// <summary>
@@ -25,9 +29,11 @@ namespace character
                 this.statTypes = statTypes;
                 this.amount = amount;
             }
-
+            [Header("Type")]
             [SerializeField] private StatTypes statTypes;
             public StatTypes StatTypes { get { return statTypes; } }
+
+            [Header("Amount")]
             [SerializeField] private float amount;
             public float Amount { get { return amount; } }
             [SerializeField] private float maxAmount;
@@ -50,6 +56,10 @@ namespace character
                 if (amount > maxAmount)
                 {
                     amount = maxAmount;
+                }
+                if (amount < 0)
+                {
+                    amount = 0;
                 }
             }
         }
@@ -90,7 +100,11 @@ namespace character
     public enum StatTypes
     {
         Life,
-        Stamina
+        Speed,
+        Stamina,
+        Damage,
+        Experience,
+        FOV,
     }
 }
 
