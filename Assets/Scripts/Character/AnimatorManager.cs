@@ -5,15 +5,24 @@ using UnityEngine;
 public class AnimatorManager : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    private bool isRunning;
 
     public void StartRunning()
     {
-        animator.SetFloat("Speed", 1);
+        if (!isRunning)
+        {
+            isRunning = true;
+            animator.SetFloat("Speed", 1);
+        }
     }
 
     public void StopRunnning()
     {
-        animator.SetFloat("Speed", 0);
+        if (isRunning)
+        {
+            isRunning = false;
+            animator.SetFloat("Speed", 0);
+        }
     }
 
     public void SpecialMovement()

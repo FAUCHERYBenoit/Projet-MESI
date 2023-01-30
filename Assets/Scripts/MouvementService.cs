@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MouvementService : MonoBehaviour
 {
@@ -13,7 +15,12 @@ public class MouvementService : MonoBehaviour
     public Rigidbody rb;
     public Vector2 movement;
     public bool canMove = true;
-    
+
+    public UnityEvent onDashStart = new UnityEvent();
+    public UnityEvent onDashStop = new UnityEvent();
+    public UnityEvent onWalk = new UnityEvent();
+    public UnityEvent onStop = new UnityEvent();
+
 
     // Use this for initialization
     void Start()
@@ -25,6 +32,7 @@ public class MouvementService : MonoBehaviour
     {
         if(canMove)
         {
+            onWalk.Invoke();
             rb.velocity = direction * speed;
             Vector3 newDir = new Vector3(direction.x, direction.y, 0);
             rb.velocity = newDir * speed;
@@ -52,8 +60,15 @@ public class MouvementService : MonoBehaviour
 
     IEnumerator DashTimer()
     {
+        onDashStart?.Invoke();
         yield return new WaitForSeconds(dashTimer);
+        onDashStop?.Invoke();  
         canMove = true;
         yield return null;
+    }
+
+    internal void Stop()
+    {
+        onStop?.Invoke();   
     }
 }
