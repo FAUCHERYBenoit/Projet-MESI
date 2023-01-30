@@ -26,7 +26,7 @@ public class MouvementService : MonoBehaviour
         if(canMove)
         {
             rb.velocity = direction * speed;
-            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            Vector3 newDir = new Vector3(direction.x, direction.y, 0);
             rb.velocity = newDir * speed;
         }
     }
@@ -37,7 +37,7 @@ public class MouvementService : MonoBehaviour
         {
             canMove= false;
             rb.AddForce(direction*dashIntensity);
-            Vector3 newDir = new Vector3(direction.x, 0, direction.y);
+            Vector3 newDir = new Vector3(direction.x, direction.y, 0);
             rb.AddForce(newDir*dashIntensity);
             StartCoroutine(DashTimer());
         }
@@ -45,10 +45,8 @@ public class MouvementService : MonoBehaviour
 
     public void RotatePlayer(Transform transform)
     {
-        Debug.Log("Been there");
         Vector3 direction = transform.position - this.transform.position;
         float angle = Vector2.SignedAngle(Vector2.right, direction);
-        Debug.Log("angle value is " + angle);   
         this.transform.eulerAngles = new Vector3(0, 0, angle);
     }
 

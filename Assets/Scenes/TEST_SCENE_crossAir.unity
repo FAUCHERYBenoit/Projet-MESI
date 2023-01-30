@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 181145881}
   - component: {fileID: 181145883}
   - component: {fileID: 181145882}
+  - component: {fileID: 181145884}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Untagged
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: 00c90525a94bd724d95b601f38a3e59f, type: 2}
-  mouvementService: {fileID: 0}
+  mouvementService: {fileID: 181145882}
   crossAir: {fileID: 1078488775}
 --- !u!114 &181145882
 MonoBehaviour:
@@ -186,9 +187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  dashTimer: 10
+  dashTimer: 0.5
   dashIntensity: 1000
-  rb: {fileID: 0}
+  rb: {fileID: 181145884}
   movement: {x: 0, y: 0}
   canMove: 1
 --- !u!114 &181145883
@@ -215,6 +216,22 @@ MonoBehaviour:
   mapAction: 0
   useItemAction: 0
   dashAction: 0
+--- !u!54 &181145884
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181145879}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 56
+  m_CollisionDetection: 0
 --- !u!1 &351950488
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +416,26 @@ PrefabInstance:
     - target: {fileID: 8245390205834738559, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390206657853557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390206657853557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390206657853557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390206657853557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390206657853557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
