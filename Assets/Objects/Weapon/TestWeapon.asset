@@ -15,4 +15,5 @@ MonoBehaviour:
   model: {fileID: 1331383360856392620, guid: 3994ebd0e67a7ef41a8991f5446bca0a, type: 3}
   bullet: {fileID: 4488035692374447795, guid: 6bdcad7fcb1076341ad74f3e5221611a, type: 3}
   damage: 10
-  fireRate: 0.05
+  fireRate: 0.1
+  position: {x: 0.8, y: 0.1, z: 0}

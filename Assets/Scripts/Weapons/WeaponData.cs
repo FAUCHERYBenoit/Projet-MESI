@@ -9,4 +9,5 @@ public class WeaponData : ScriptableObject
     public GameObject bullet;
     public float damage;
     public float fireRate;
+    public Vector3 position;
 }

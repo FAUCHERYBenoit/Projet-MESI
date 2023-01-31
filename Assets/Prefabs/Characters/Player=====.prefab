@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1678565571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678565572}
+  - component: {fileID: 1678565573}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1678565572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678565571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5612600278422398382}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678565573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678565571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8644d9c4e77fe4aa9bda545cb6fa99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponData: {fileID: 11400000, guid: 31238f569ff48154582c81752103bba8, type: 2}
+  playerRotation: {fileID: 4579725980744345961}
+  leftHandPos: {fileID: 5612600277080064074}
 --- !u!1 &4579725979494160050
 GameObject:
   m_ObjectHideFlags: 0
@@ -272,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.03714919
+      value: -0.03714931
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -360,6 +407,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+--- !u!4 &5612600277080064074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8245390206610419886, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+  m_PrefabInstance: {fileID: 4579725981079728356}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &5612600277315210136 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 8245390205834738556, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
@@ -388,3 +440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5612600277315210136}
+--- !u!4 &5612600278422398382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8245390204727350602, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+  m_PrefabInstance: {fileID: 4579725981079728356}
+  m_PrefabAsset: {fileID: 0}
