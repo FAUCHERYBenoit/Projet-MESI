@@ -92,6 +92,10 @@ namespace character
             {
                 playerManager.MovePlayer(MovementInput);
             }
+            else
+            {
+                playerManager.Stop();
+            }
         }
 
         void Update()
@@ -99,7 +103,6 @@ namespace character
             if (dashAction)
             {
                 playerManager.Dash(movementInput);
-                Debug.Log("<color=orange> dash action </Color>");
             }
 
             if (primaryAction)
