@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ee25ad3880c12d408cb4f3ccad04a86, type: 3}
+  m_Name: TestWeapon
+  m_EditorClassIdentifier: 
+  model: {fileID: 1331383360856392620, guid: 3994ebd0e67a7ef41a8991f5446bca0a, type: 3}
+  bullet: {fileID: 4488035692374447795, guid: 6bdcad7fcb1076341ad74f3e5221611a, type: 3}
+  damage: 10
+  fireRate: 0.05

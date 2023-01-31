@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace character
 {
-    [CreateAssetMenu(menuName = "Stats/Player")]
+    [CreateAssetMenu(menuName = "New Data/Player")]
     public class PlayerStats : AbstractCharacterStats
     {
 
