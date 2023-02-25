@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace items
 {
-    public class Bullets_Item : MonoBehaviour
+    [CreateAssetMenu (menuName = "Item/Bullet")]
+    public class Bullets_Item : Items
     {
         [SerializeField] GameObject bulletPrefab;
 

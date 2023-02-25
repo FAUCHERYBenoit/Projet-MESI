@@ -50,6 +50,7 @@ namespace character
             mouvementService.onDashStop.AddListener(() => { Handledash(false); });
         }
 
+        #region motion
         public void MovePlayer(Vector2 direction)
         {
             mouvementService.moveCharacter(direction);
@@ -65,10 +66,17 @@ namespace character
             mouvementService.RotatePlayer(transform);
         }
 
-        internal void Stop()
+        public void Stop()
         {
             mouvementService.Stop();
         }
+        #endregion
+        #region Attack
+        public void Shoot()
+        {
+            weaponManager.ShootBullet();
+        }
+        #endregion
 
         protected override void TakeDamage(DamageData damage)
         {
