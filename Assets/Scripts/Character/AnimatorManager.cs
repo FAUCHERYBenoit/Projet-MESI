@@ -36,4 +36,15 @@ public class AnimatorManager : MonoBehaviour
     {
         animator.SetBool("IsSpecialMotion", false);
     }
+
+    public void PlayTargetAnimation(string animation)
+    {
+        animator.Play(animation);                                     
+    }
+
+    public void SetAnimationByBool(string boolNme, bool value)
+    {
+        animator.Play("Empty");
+        animator.SetBool(boolNme, value);
+    }
 }
