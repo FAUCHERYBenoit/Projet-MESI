@@ -4,6 +4,7 @@ using UnityEngine;
 using messages;
 using System;
 using combat;
+using combat.weapon;
 
 namespace character
 {
