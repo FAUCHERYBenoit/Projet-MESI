@@ -25,6 +25,16 @@ namespace combat
                 onInflictDamage.Invoke(damage, character);
             }
         }
+
+        public void OpenCollider()
+        {
+            collider2D.enabled = true;
+        }
+
+        public void CloseCollider()
+        {
+            collider2D.enabled = false;
+        }
     }
 }
 

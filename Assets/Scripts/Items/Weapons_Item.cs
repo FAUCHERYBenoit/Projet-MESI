@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace items
 {
+    [CreateAssetMenu(menuName = "Item/Weapons")]
     public class Weapons_Item : Items
     {
         [SerializeField] GameObject weaponPrefab;
         [SerializeField] DamageData damageData;
-        [SerializeField] GameObject defaultBulletPrefab;
+        [SerializeField] Bullets_Item defaultBullet;
 
         public GameObject WeaponPrefab { get => weaponPrefab; }
         public DamageData DamageData { get => damageData; }
-        public GameObject DefaultBulletPrefab { get => defaultBulletPrefab; }
+        public Bullets_Item DefaultBullet { get => defaultBullet; }
     }
 }
 

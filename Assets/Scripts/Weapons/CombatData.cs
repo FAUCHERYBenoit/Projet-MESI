@@ -26,5 +26,6 @@ namespace combat
     public class InflictDamageEvent : UnityEvent<DamageData, AbstractCharacterManager> { }
     public class TakeDamageEvent : UnityEvent<DamageData> { }
     public class DodgeEvent : UnityEvent { }
+    public class ShootBulletEvent : UnityEvent { }
 }
 

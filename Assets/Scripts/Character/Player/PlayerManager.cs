@@ -21,6 +21,9 @@ namespace character
         [SerializeField] MouvementService mouvementService;
         [SerializeField] TrailRenderer dashTrail;
 
+        [Header("combat")]
+        [SerializeField] WeaponManager weaponManager;
+
         void Awake()
         {
             mouvementService = GetComponent<MouvementService>();
