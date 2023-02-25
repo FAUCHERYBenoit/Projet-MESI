@@ -11,7 +11,7 @@ namespace combat
     {
         [SerializeField] Rigidbody2D rb;
         [SerializeField] Collider2D collider2D;
-        [SerializeField] LayerMask layerMask;
+        [SerializeField] int targetLayer;
         [HideInInspector] public InflictDamageEvent onInflictDamage = new InflictDamageEvent();
         [HideInInspector] public UnityEvent<BulletCollider> onTimeOut = new UnityEvent<BulletCollider>();
 
@@ -25,16 +25,18 @@ namespace combat
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.layer == layerMask)
+            if (collision.gameObject.layer == targetLayer)
             {
+                Debug.Log("collision");
                 TakeDamageCollider takeDamageCollider = collision.GetComponent<TakeDamageCollider>();
                 onInflictDamage.Invoke(this, damage, takeDamageCollider);
             }
         }
 
-        public void OpenCollider(float timer)
+        public void OpenCollider(float timer, DamageData damage)
         {
             collider2D.enabled = true;
+            this.damage = damage;
             StartCoroutine(BulletAutoDestruction(timer));
         }
 

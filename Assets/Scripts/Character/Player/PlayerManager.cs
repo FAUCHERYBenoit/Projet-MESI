@@ -5,6 +5,7 @@ using messages;
 using System;
 using combat;
 using combat.weapon;
+using UnityEngine.InputSystem;
 
 namespace character
 {
@@ -14,6 +15,7 @@ namespace character
 
         [SerializeField] AnimatorManager animator;
         [SerializeField] CrossAir crossAir;
+        [SerializeField] InputManager inputManager;
 
         [Header("colliders")]
         [SerializeField] PlayerTakeDamageCollider playerTakeDamageCollider;
@@ -48,12 +50,24 @@ namespace character
             mouvementService.onStop.AddListener(() => { animator.StopRunnning(); });
             mouvementService.onDashStart.AddListener(() => { Handledash(true); });
             mouvementService.onDashStop.AddListener(() => { Handledash(false); });
+
+            inputManager.onMove.AddListener(direction => MovePlayer(direction));
+            inputManager.onDashAction.AddListener(direction => Dash(direction));
+            inputManager.onPrimaryAction.AddListener(() => Shoot());
+
         }
 
         #region motion
-        public void MovePlayer(Vector2 direction)
+        private void MovePlayer(Vector2 direction)
         {
-            mouvementService.moveCharacter(direction);
+            if (direction.x != 0 || direction.y != 0)
+            {
+                mouvementService.moveCharacter(direction);
+            }
+            else
+            {
+                Stop();
+            }
         }
 
         public void Dash(Vector2 direction)

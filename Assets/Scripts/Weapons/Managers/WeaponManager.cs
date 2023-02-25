@@ -39,6 +39,7 @@ namespace combat.weapon
                 bulletColliders[poolCounter] = Instantiate(currentWeapon.DefaultBullet.BulletPrefab, shootTransform).GetComponent<BulletCollider>();
                 bulletColliders[poolCounter].onInflictDamage.AddListener((bullet, data, target) => HandleInflictDamage(bullet, data, target));
                 bulletColliders[poolCounter].onTimeOut.AddListener((bullet) => ResetBullet(bullet));
+                bulletColliders[poolCounter].Rb.gravityScale = 0;
             }
 
             BulletCollider currentBullet = bulletColliders[poolCounter];
@@ -49,10 +50,10 @@ namespace combat.weapon
             Vector3 Direction = transform.right;
             currentBullet.Rb.AddForce(currentWeapon.BulletSpeed * Direction);
 
-            currentBullet.OpenCollider(bulletAutoDestructionTimer);
+            currentBullet.OpenCollider(bulletAutoDestructionTimer, currentWeapon.DamageData);
 
             poolCounter++;
-            if (poolCounter > MaximumAmountOfBullets)
+            if (poolCounter >= MaximumAmountOfBullets)
             {
                 poolCounter = 0;
             }
