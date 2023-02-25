@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!96 &212984025 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 212984025, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
+  m_PrefabInstance: {fileID: 4579725980564256881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &287378494
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,17 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fad22ced34f5c4aaeeab40fb5f7467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1530363379 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1530363379, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
-  m_PrefabInstance: {fileID: 4579725980564256881}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35d9e4c9e4cf564db92df017a8976bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &4579725980564256881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -471,9 +465,9 @@ PrefabInstance:
       value: Player=====
       objectReference: {fileID: 0}
     - target: {fileID: 4579725980744345960, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
-      propertyPath: playerTakeDamageCollider
+      propertyPath: dashTrail
       value: 
-      objectReference: {fileID: 1530363379}
+      objectReference: {fileID: 212984025}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
 --- !u!1001 &6581971911557669250

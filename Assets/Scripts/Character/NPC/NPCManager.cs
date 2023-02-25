@@ -21,8 +21,8 @@ namespace character
 
         protected override void TakeDamage(DamageData damage)
         {
-            nPCStats.AddOrRemoveStat(StatTypes.Life, damage.damageAmount);
-            Debug.Log("NPC has taken somedamage "+ damage.damageAmount);
+            nPCStats.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
+            Debug.Log("NPC has taken somedamage "+ damage.DamageAmount);
         }
     }
 }

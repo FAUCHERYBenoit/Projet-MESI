@@ -10,11 +10,16 @@ namespace character
     public class PlayerManager : AbstractCharacterManager
     {
         public PlayerStats playerStats;
-        [SerializeField] MouvementService mouvementService;
+
         [SerializeField] AnimatorManager animator;
         [SerializeField] CrossAir crossAir;
 
+        [Header("colliders")]
         [SerializeField] PlayerTakeDamageCollider playerTakeDamageCollider;
+
+        [Header("Mouvement")]
+        [SerializeField] MouvementService mouvementService;
+        [SerializeField] TrailRenderer dashTrail;
 
         void Awake()
         {
@@ -23,6 +28,7 @@ namespace character
             {
                 crossAir = GetComponent<CrossAir>();
             }
+            dashTrail.enabled = false;
         }
 
         private void Start()
@@ -62,7 +68,7 @@ namespace character
 
         protected override void TakeDamage(DamageData damage)
         {
-            playerStats.AddOrRemoveStat(StatTypes.Life, damage.damageAmount);
+            playerStats.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
             Debug.Log("The player took damage");
         }
 
@@ -76,11 +82,13 @@ namespace character
             {
                 animator.SpecialMovement();
                 playerTakeDamageCollider.CloseCollider();
+                dashTrail.enabled = true;
             }
             else
             {
                 animator.StopSpecialMotion();
                 playerTakeDamageCollider.OpenCollider();
+                dashTrail.enabled = false;
             }
         }
     }  

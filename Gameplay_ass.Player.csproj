@@ -86,6 +86,9 @@
     <Compile Include="Assets\Scripts\Weapons\ZombiTakeDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Weapons\CombatData.cs" />
     <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Weapons\Managers\WeaponManager.cs" />
+    <Compile Include="Assets\Scripts\Items\Items.cs" />
+    <Compile Include="Assets\Scripts\Items\Weapons_Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />
