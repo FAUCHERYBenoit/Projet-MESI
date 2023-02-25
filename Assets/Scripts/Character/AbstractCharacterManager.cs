@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using messages;
+using combat;
 
 namespace character
 {
@@ -14,6 +15,8 @@ namespace character
         {
             GameManager.Instance.SendAMessage(message);
         }
+
+        protected abstract void TakeDamage(DamageData damage);
     }
 }
 

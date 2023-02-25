@@ -81,6 +81,11 @@
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
     <Compile Include="Assets\Scripts\Crosshair\CrossAir.cs" />
+    <Compile Include="Assets\Scripts\Weapons\PlayerTakeDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Weapons\BulletCollider.cs" />
+    <Compile Include="Assets\Scripts\Weapons\ZombiTakeDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Weapons\CombatData.cs" />
+    <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />
@@ -685,16 +690,14 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.13f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.InputSystem.Player.csproj">
-      <Project>{FC1BA666-6609-0CED-6D13-091F66C6D008}</Project>
-      <Name>Unity.InputSystem.Player</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{AC4EC7D3-B2DC-0933-D334-2BFD1B99BA98}</Project>
-      <Name>UnityEngine.UI.Player</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -1,3 +1,4 @@
+using combat;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,8 +17,8 @@ public class MouvementService : MonoBehaviour
     public Vector2 movement;
     public bool canMove = true;
 
-    public UnityEvent onDashStart = new UnityEvent();
-    public UnityEvent onDashStop = new UnityEvent();
+    public DodgeEvent onDashStart = new DodgeEvent();
+    public DodgeEvent onDashStop = new DodgeEvent();
     public UnityEvent onWalk = new UnityEvent();
     public UnityEvent onStop = new UnityEvent();
 

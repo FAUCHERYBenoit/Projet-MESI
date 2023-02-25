@@ -10,8 +10,8 @@ namespace character
     {
         public List<Stat> characterStats = new List<Stat>()
         {
-            new Stat(StatTypes.Life, 0),
-            new Stat(StatTypes.Stamina, 0),
+            new Stat(StatTypes.Life, 100, 100),
+            new Stat(StatTypes.Stamina, 100, 100),
         };
 
         /// <summary>
@@ -20,10 +20,18 @@ namespace character
         [Serializable]
         public class Stat
         {
-            public Stat(StatTypes statTypes, float amount)
+            public Stat(StatTypes statTypes, float amount, float maxAmount = 150)
             {
                 this.statTypes = statTypes;
                 this.amount = amount;
+                if (amount > maxAmount)
+                {
+                    this.maxAmount = amount;
+                }
+                else
+                {
+                    this.maxAmount = maxAmount;
+                }
             }
 
             [SerializeField] private StatTypes statTypes;
