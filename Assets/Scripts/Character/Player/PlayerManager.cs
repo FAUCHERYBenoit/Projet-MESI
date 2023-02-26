@@ -6,16 +6,18 @@ using System;
 using combat;
 using combat.weapon;
 using UnityEngine.InputSystem;
+using character.stat;
 
 namespace character
 {
     public class PlayerManager : AbstractCharacterManager
     {
-        public PlayerStats playerStats;
+        [SerializeField] PlayerStats playerStats;
 
         [SerializeField] AnimatorManager animator;
         [SerializeField] CrossAir crossAir;
         [SerializeField] InputManager inputManager;
+        [SerializeField] StatSystem statSystem;
 
         [Header("colliders")]
         [SerializeField] PlayerTakeDamageCollider playerTakeDamageCollider;
@@ -35,6 +37,7 @@ namespace character
                 crossAir = GetComponent<CrossAir>();
             }
             dashTrail.enabled = false;
+            statSystem = new StatSystem(playerStats.characterStats);
         }
 
         private void Start()
@@ -94,7 +97,7 @@ namespace character
 
         protected override void TakeDamage(DamageData damage)
         {
-            playerStats.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
+            statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
             Debug.Log("The player took damage");
         }
 

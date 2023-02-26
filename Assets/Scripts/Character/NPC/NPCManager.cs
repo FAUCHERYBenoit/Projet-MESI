@@ -1,3 +1,4 @@
+using character.stat;
 using combat;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,23 +8,26 @@ namespace character
 {
     public class NPCManager : AbstractCharacterManager
     {
-        public NPCStats nPCStats;
+        [SerializeField] NPCStats nPCStats;
 
         [SerializeField] ZombiTakeDamageCollider zombiTakeDamageCollider;
         [SerializeField] AnimatorManager animator;
 
+        [SerializeField] StatSystem statSystem;
+
         private void Awake()
         {
             zombiTakeDamageCollider.onTakeDamage.AddListener(data => { TakeDamage(data); });
+            statSystem = new StatSystem(nPCStats.characterStats);
         }
 
         protected override void TakeDamage(DamageData damage)
         {
-            nPCStats.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
+            statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
 
             Debug.Log("NPC has taken somedamage "+ damage.DamageAmount);
 
-            if( nPCStats.GetStatValue(StatTypes.Life) <= 0)
+            if(statSystem.GetStatValue(StatTypes.Life) <= 0)
             {
                 animator.PlayTargetAnimation("Z_01_Dead");
                 Debug.Log($"<color=green>Dead</color>");
