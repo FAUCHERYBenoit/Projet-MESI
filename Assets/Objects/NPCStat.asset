@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterStats:
   - statTypes: 0
-    amount: 100
+    amount: -470
     maxAmount: 100
   - statTypes: 1
     amount: 100

@@ -18,6 +18,7 @@ namespace character
         [SerializeField] CrossAir crossAir;
         [SerializeField] InputManager inputManager;
         [SerializeField] StatSystem statSystem;
+        [SerializeField] Camera camera;
 
         [Header("colliders")]
         [SerializeField] PlayerTakeDamageCollider playerTakeDamageCollider;
@@ -38,6 +39,8 @@ namespace character
             }
             dashTrail.enabled = false;
             statSystem = new StatSystem(playerStats.characterStats);
+
+            crossAir.Init(camera);
         }
 
         private void Start()
