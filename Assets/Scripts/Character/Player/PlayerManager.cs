@@ -7,6 +7,7 @@ using combat;
 using combat.weapon;
 using UnityEngine.InputSystem;
 using character.stat;
+using camera;
 
 namespace character
 {
@@ -18,7 +19,10 @@ namespace character
         [SerializeField] CrossAir crossAir;
         [SerializeField] InputManager inputManager;
         [SerializeField] StatSystem statSystem;
+
+        [Header("Camera")]
         [SerializeField] Camera camera;
+        [SerializeField] CameraShake cameraShake;
 
         [Header("colliders")]
         [SerializeField] PlayerTakeDamageCollider playerTakeDamageCollider;
@@ -95,6 +99,7 @@ namespace character
         public void Shoot()
         {
             weaponManager.ShootBullet();
+            cameraShake.ShakeCamera(1.25f, 0.2f, 1);
         }
         #endregion
 

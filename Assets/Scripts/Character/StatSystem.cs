@@ -13,7 +13,11 @@ namespace character.stat
             this.characterStats = new List<Stat>();
             if (characterStats != null)
             {
-                this.characterStats.AddRange(characterStats);
+                characterStats.ForEach(s =>
+                {
+                    this.characterStats.Add(new Stat(s.StatTypes, s.Amount, s.MaxAmount));
+                });
+
             }
         }
 
