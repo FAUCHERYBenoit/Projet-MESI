@@ -79,10 +79,12 @@
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\ZombiTakeDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\Weapons\Managers\WeaponManager.cs" />
     <Compile Include="Assets\Scripts\UI\BulletContainer.cs" />
     <Compile Include="Assets\Scripts\Weapons\BulletCollider.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\AddRoom.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\NPCBrain.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
@@ -91,8 +93,6 @@
     <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
     <Compile Include="Assets\Scripts\Crosshair\CrossAir.cs" />
     <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\NPCBrain.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />
