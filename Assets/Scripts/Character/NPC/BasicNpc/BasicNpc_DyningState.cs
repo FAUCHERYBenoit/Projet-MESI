@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace character.ai
+{
+    public class BasicNpc_DyningState : AbstractActivity
+    {
+        public bool once = true;
+        bool active = true;
+
+        protected override void DoStateLogique()
+        {
+            onAnimationPlayed?.Invoke("Z_01_Dead", false, () => active = false);
+        }
+        protected override AI_States GetNextState()
+        {
+            return AI_States.None;
+        }
+        protected override bool IsStillActive(bool isIt = true)
+        {
+            return active;
+        }
+    }
+}

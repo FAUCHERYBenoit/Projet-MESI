@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Package</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>2.0.16</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>2.0.17</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2021.3.13f1</UnityVersion>
@@ -56,19 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
-    <Compile Include="Assets\Scripts\PlayerControls.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\InputManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
-    <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
-    <Compile Include="Assets\UI\UIManager.cs" />
-    <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
-    <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
-    <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
+    <Compile Include="Assets\BasicNPC_ApperaingState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -668,11 +656,17 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>D:\Unity\2021.3.13f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
       <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
@@ -707,6 +701,12 @@
     <Reference Include="Unity.Services.Core.Environments">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
@@ -723,6 +723,10 @@
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{AC4EC7D3-B2DC-0933-D334-2BFD1B99BA98}</Project>
       <Name>UnityEngine.UI.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Gameplay_ass.Player.csproj">
+      <Project>{354658F4-365A-464E-E405-C88F796F088D}</Project>
+      <Name>Gameplay_ass.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.Player.csproj">
       <Project>{C88631E1-6DCB-39F7-BC05-ABCCB942AFBD}</Project>

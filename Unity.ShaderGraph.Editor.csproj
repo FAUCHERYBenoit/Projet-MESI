@@ -149,8 +149,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Math\Basic\SubtractNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Graphs\GraphData.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Math\Wave\TriangleWaveNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Lighting\BakedGINode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Math\Trigonometry\HyperbolicCosineNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Lighting\BakedGINode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Controls\ChannelEnumControl.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Geometry\VertexColorNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Artistic\Blend\BlendNode.cs" />
@@ -317,8 +317,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Generation\Targets\PreviewTarget.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Views\Slots\Texture3DSlotControlView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Texture\SampleCubemapNode.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Graphs\SerializableTexture.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Utility\PreviewNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Graphs\SerializableTexture.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Graphs\MatrixShaderProperty.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Inspector\PropertyDrawers\GradientPropertyDrawer.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\MaterialEditor\ShaderGraphPropertyDrawers.cs" />
@@ -479,8 +479,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Views\ContextView.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Generation\Enumerations\Blend.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Generation\Enumerations\KeywordScope.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Interfaces\IMayRequireViewDirection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Artistic\Normal\NormalStrengthNode.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Interfaces\IMayRequireViewDirection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Texture\TextureStackNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Data\Nodes\Input\Scene\EyeIndexNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@12.1.7\Editor\Drawing\Inspector\PropertyDrawers\Vector3PropertyDrawer.cs" />

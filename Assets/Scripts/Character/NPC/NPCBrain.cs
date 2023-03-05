@@ -9,45 +9,40 @@ namespace character.ai
 {
     public class NPCBrain : MonoBehaviour
     {
-        List<AbstractActivity> states = new List<AbstractActivity>();
+        [SerializeField] List<AbstractActivity> states = new List<AbstractActivity>();
+        Coroutine coroutine;
+        [SerializeField] AI_States currentState;
+        [HideInInspector] public AIAnimationEvent onAnimationPlayed = new AIAnimationEvent();
 
         private void Awake()
         {
             states.ForEach(s =>
             {
                 s.onStateChange.AddListener(newState => HandleState(newState));
+                s.onAnimationPlayed.AddListener((s, b, a) => onAnimationPlayed?.Invoke(s, b, a));
             });
         }
 
         public void HandleState(AI_States aI_States)
         {
+            currentState = aI_States;
+
+            if (currentState == AI_States.None)
+            {
+                return;
+            }
+
             List<AbstractActivity> possibleState = states.Where(state => state.aI_States == aI_States).ToList();
-            possibleState[Random.Range(0, possibleState.Count)].RunActivity();
+            if (coroutine == null)
+            {
+                coroutine = StartCoroutine(possibleState[Random.Range(0, possibleState.Count)].RunActivity());
+            }
+            else
+            {
+                StopCoroutine(coroutine);
+                coroutine = StartCoroutine(possibleState[Random.Range(0, possibleState.Count)].RunActivity());
+            }
         }
-    }
-
-    public class AIStateEvent : UnityEvent<AI_States> { }
-
-    public abstract class AbstractActivity : MonoBehaviour
-    {
-        public AbstractActivity(AI_States aI_States)
-        {
-            this.aI_States = aI_States;
-        }
-
-        public AI_States aI_States;
-        public AIStateEvent onStateChange = new AIStateEvent();
-        public abstract void RunActivity();
-    }
-
-    public enum AI_States
-    {
-        Appearing,
-        Idle,
-        LookingForTarget,
-        ChasingTarget,
-        Attacking,
-        Dying,
     }
 }
 

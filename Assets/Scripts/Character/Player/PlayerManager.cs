@@ -119,13 +119,19 @@ namespace character
             {
                 animator.SpecialMovement();
                 playerTakeDamageCollider.CloseCollider();
-                dashTrail.enabled = true;
+                if (dashTrail != null)
+                {
+                    dashTrail.enabled = true;
+                }
             }
             else
             {
                 animator.StopSpecialMotion();
                 playerTakeDamageCollider.OpenCollider();
-                dashTrail.enabled = false;
+                if (dashTrail != null)
+                {
+                    dashTrail.enabled = false;
+                }
             }
         }
     }  

@@ -30,6 +30,10 @@ public class GameManager : AbstractManager
     [SerializeField] private AudioManager audioManager;
     public AudioManager GetAudioManager { get { return audioManager; } }
 
+    [SerializeField] private float tick = 0.5f;
+    public float Tick { get => tick; }
+
+
     /// <summary>
     /// Use this methods to handle any messages 
     /// </summary>
