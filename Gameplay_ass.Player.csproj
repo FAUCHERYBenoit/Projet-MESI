@@ -61,11 +61,14 @@
     <Compile Include="Assets\Scripts\MapGeneration\RoomTemplatesScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\Direction.cs" />
     <Compile Include="Assets\Scripts\Weapons\PlayerTakeDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_DyningState.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ApperaingState.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterManager.cs" />
     <Compile Include="Assets\Scripts\Items\Items.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\RoomScript.cs" />
     <Compile Include="Assets\Scripts\Weapons\CombatData.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerStats.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_LookForTargetState.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\Character\Player\InputManager.cs" />
     <Compile Include="Assets\Scripts\GenericManager\GameManager.cs" />
@@ -73,10 +76,13 @@
     <Compile Include="Assets\Scripts\MapGeneration\RoomSelectorScript.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AbstractManager.cs" />
     <Compile Include="Assets\Scripts\MouvementService.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_AttackingState.cs" />
     <Compile Include="Assets\Scripts\Character\AnimatorManager.cs" />
     <Compile Include="Assets\Scripts\Items\Bullets_Item.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\AbstractActivity.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCManager.cs" />
     <Compile Include="Assets\Scripts\Camera\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_IdleState.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Weapons\ZombiTakeDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
@@ -84,6 +90,7 @@
     <Compile Include="Assets\Scripts\UI\BulletContainer.cs" />
     <Compile Include="Assets\Scripts\Weapons\BulletCollider.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\AddRoom.cs" />
+    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ChasingTargetState.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCBrain.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
@@ -93,13 +100,6 @@
     <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
     <Compile Include="Assets\Scripts\Crosshair\CrossAir.cs" />
     <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\AbstractActivity.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_IdleState.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ApperaingState.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_LookForTargetState.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ChasingTargetState.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_AttackingState.cs" />
-    <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_DyningState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />

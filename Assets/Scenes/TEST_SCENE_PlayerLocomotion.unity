@@ -184,7 +184,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 351950488}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -1.8508166e-22, y: 0.000000007916242, z: 0.000000047497448, w: 1}
   m_LocalPosition: {x: -0.2291361, y: 2.5899117, z: -8.988344}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -438,7 +438,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077145088}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1.4651512e-30, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -738,6 +738,14 @@ PrefabInstance:
       propertyPath: poolTransform
       value: 
       objectReference: {fileID: 1540234685}
+    - target: {fileID: 420372648, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
+      propertyPath: MaximumAmountOfBullets
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 420372648, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
+      propertyPath: bulletAutoDestructionTimer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4579725979528987522, guid: c3d32502bfbe2e54aad388e843c5a1e0, type: 3}
       propertyPath: m_RootOrder
       value: 1

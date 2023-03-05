@@ -351,7 +351,7 @@ Transform:
   m_GameObject: {fileID: 4579725979494160050}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.2291361, y: -1.5899117, z: -0.011655927}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4579725979528987522}
@@ -395,15 +395,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingLayerID: -1189578609
+  m_SortingLayer: 2
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 1268449731, guid: ca59bb8ba97e1df41bd55392d85066ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.92, y: 1.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -514,6 +514,7 @@ MonoBehaviour:
   crossAir: {fileID: 4579725979494160054}
   inputManager: {fileID: 4579725980744345962}
   camera: {fileID: 0}
+  cameraShake: {fileID: 0}
   playerTakeDamageCollider: {fileID: 1530363379}
   mouvementService: {fileID: 4579725980744345963}
   dashTrail: {fileID: 212984025}

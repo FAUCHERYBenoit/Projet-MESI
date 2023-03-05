@@ -141,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullets 1_0
+      name: 9mm
       rect:
         serializedVersion: 2
-        x: 69
-        y: 755
-        width: 87
-        height: 148
+        x: 30
+        y: 786
+        width: 151
+        height: 90
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,8 +155,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c75e9d45e04b214b931935914d14c15
-      internalID: 524593100
+      spriteID: a727d215e7307c0429554ad7310ed2cb
+      internalID: -130603803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: crossAir
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 532
+        width: 192
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb50c60aa87fe34b846b7d945dceaa2
+      internalID: 1268449731
       vertices: []
       indices: 
       edges: []
@@ -164,7 +185,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8b81798e9100a194a97ff044fcc6a16e
+    spriteID: 1738cb95c1c8e56458d26e17864c3025
     internalID: 0
     vertices: []
     indices: 
@@ -172,7 +193,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bullets 1_0: 524593100
+      crossAir: 1268449731
+      9mm: -130603803
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

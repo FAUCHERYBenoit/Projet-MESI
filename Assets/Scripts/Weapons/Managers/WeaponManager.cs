@@ -70,9 +70,8 @@ namespace combat.weapon
             bullet.CloseCollider();
             bullet.transform.SetParent(shootTransform);
             bullet.gameObject.transform.position = shootTransform.position;
-            Vector3 offSetAngle = new Vector3(0, 0, -90);
-            bullet.gameObject.transform.localEulerAngles = offSetAngle;
-            bullet.Rb.velocity = Vector3.zero;
+            bullet.gameObject.transform.localRotation = Quaternion.identity;
+            bullet.Rb.velocity = Vector3.zero; 
             bullet.gameObject.SetActive(false);
         }
     }
