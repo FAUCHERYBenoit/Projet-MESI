@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using UnityEngine.AI;
 
 namespace character.ai
 {
@@ -13,6 +14,7 @@ namespace character.ai
         Coroutine coroutine;
         [SerializeField] AI_States currentState;
         [HideInInspector] public AIAnimationEvent onAnimationPlayed = new AIAnimationEvent();
+        [SerializeField] NavMeshAgent navMeshAgent;
 
         private void Awake()
         {
@@ -21,6 +23,12 @@ namespace character.ai
                 s.onStateChange.AddListener(newState => HandleState(newState));
                 s.onAnimationPlayed.AddListener((s, b, a) => onAnimationPlayed?.Invoke(s, b, a));
             });
+        }
+
+        private void Start()
+        {
+            navMeshAgent.updateRotation = false;
+            navMeshAgent.updateUpAxis = false;
         }
 
         public void HandleState(AI_States aI_States)

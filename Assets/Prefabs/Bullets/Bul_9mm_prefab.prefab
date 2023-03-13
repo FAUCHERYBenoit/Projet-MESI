@@ -379,7 +379,7 @@ GameObject:
   - component: {fileID: 5668934270475863446}
   - component: {fileID: 5668934270475863444}
   - component: {fileID: 6431423479217940241}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Bul_9mm_prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

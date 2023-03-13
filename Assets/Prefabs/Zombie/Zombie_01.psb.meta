@@ -1459,8 +1459,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 670
-      y: 2069
+      x: 675
+      y: 2074
       width: 670
       height: 171
     spriteID: 3291ecc639bb45b4eb76ea17d6c8d8b9
@@ -2111,7 +2111,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1890
+      y: 1895
       width: 658
       height: 472
     spriteID: ec2216a8c5a450742afec75bf3236e4e
@@ -4582,10 +4582,10 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 1512
-      width: 1479
-      height: 370
+      x: 539
+      y: 1509
+      width: 401
+      height: 189
     spriteID: 11e76727fdea29c4288a6dd3419bc75b
     spriteBone:
     - name: L_Foot
