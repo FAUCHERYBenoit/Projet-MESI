@@ -29,11 +29,14 @@ namespace character.ai
         {
             navMeshAgent.updateRotation = false;
             navMeshAgent.updateUpAxis = false;
+
+            HandleState(currentState);
         }
 
         public void HandleState(AI_States aI_States)
         {
             currentState = aI_States;
+            navMeshAgent.isStopped = true;
 
             if (currentState == AI_States.None)
             {

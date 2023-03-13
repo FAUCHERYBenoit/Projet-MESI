@@ -33,6 +33,9 @@ public class GameManager : AbstractManager
     [SerializeField] private float tick = 0.5f;
     public float Tick { get => tick; }
 
+    [SerializeField] private Transform playerTransform;
+    public Transform PlayerTransform { get { return playerTransform; }}
+
 
     /// <summary>
     /// Use this methods to handle any messages 

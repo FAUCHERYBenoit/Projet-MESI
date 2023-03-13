@@ -6,19 +6,20 @@ namespace character.ai
 {
     public class BasicNpc_ApperaingState : AbstractActivity
     {
+        [SerializeField] AI_States nextState;
         protected override void DoStateLogique()
         {
-            throw new System.NotImplementedException();
+            //Appearing
         }
 
         protected override AI_States GetNextState()
         {
-            throw new System.NotImplementedException();
+            return nextState;
         }
 
         protected override bool IsStillActive(bool isIt = true)
         {
-            throw new System.NotImplementedException();
+            return false;
         }
     }
 }

@@ -27,9 +27,13 @@ namespace combat
         {
             if (collision.gameObject.layer == targetLayer)
             {
-                Debug.Log("collision");
                 TakeDamageCollider takeDamageCollider = collision.GetComponent<TakeDamageCollider>();
                 onInflictDamage.Invoke(this, damage, takeDamageCollider);
+            }
+            else if (collision.gameObject.layer == 31)
+            {
+                StopAllCoroutines();
+                onTimeOut?.Invoke(this);
             }
         }
 
