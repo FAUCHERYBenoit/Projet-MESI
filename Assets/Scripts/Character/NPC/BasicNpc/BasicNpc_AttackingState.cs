@@ -6,9 +6,22 @@ namespace character.ai
 {
     public class BasicNpc_AttackingState : AbstractActivity
     {
+        [SerializeField] List<Collider> colliders = new List<Collider>();
+        [SerializeField] int damageAmount;
+
+        private void Awake()
+        {
+            
+        }
+
+        protected override void InitState()
+        {
+            base.InitState();
+        }
+
         protected override void DoStateLogique()
         {
-            throw new System.NotImplementedException();
+            
         }
 
         protected override AI_States GetNextState()

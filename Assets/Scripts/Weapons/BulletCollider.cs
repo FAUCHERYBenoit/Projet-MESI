@@ -7,17 +7,8 @@ using UnityEngine.Events;
 
 namespace combat
 {
-    public class BulletCollider : MonoBehaviour
+    public class BulletCollider : AbstractInflictDamageCollider
     {
-        [SerializeField] Rigidbody2D rb;
-        [SerializeField] Collider2D collider2D;
-        [SerializeField] int targetLayer;
-        [HideInInspector] public InflictDamageEvent onInflictDamage = new InflictDamageEvent();
-        [HideInInspector] public UnityEvent<BulletCollider> onTimeOut = new UnityEvent<BulletCollider>();
-
-        public DamageData damage { get; private set; }
-        public Rigidbody2D Rb { get => rb; }
-
         public void SetDamageData(DamageData damageData)
         {
             this.damage = damageData;
@@ -39,14 +30,10 @@ namespace combat
 
         public void OpenCollider(float timer, DamageData damage)
         {
-            collider2D.enabled = true;
+            base.OpenCollider();
+
             this.damage = damage;
             StartCoroutine(BulletAutoDestruction(timer));
-        }
-
-        public void CloseCollider()
-        {
-            collider2D.enabled = false;
         }
 
         IEnumerator BulletAutoDestruction(float timer)
