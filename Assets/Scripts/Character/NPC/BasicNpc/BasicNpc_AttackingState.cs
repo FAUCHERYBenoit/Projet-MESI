@@ -10,12 +10,22 @@ namespace character.ai
         [SerializeField] List<CloseCombatDamageCollider> colliders = new List<CloseCombatDamageCollider>();
         [SerializeField] int damageAmount;
         bool isActive = true;
+        bool alreadyEnded = true;
 
         private void Start()
         {
             colliders.ForEach(c =>
             {
-                c.onInflictDamage.AddListener((collider, data, target) => target.TakeDamage(data));
+                c.onInflictDamage.AddListener((collider, data, target) =>
+                {
+                    target.TakeDamage(data);
+
+                    colliders.ForEach(c =>
+                    {
+                        c.CloseCollider();
+                    });
+                });
+
                 c.SetDamageData(new DamageData(damageAmount));
             });
         }

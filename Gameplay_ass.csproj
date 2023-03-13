@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Weapons\AbstractInflictDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Weapons\CloseCombatDamageCollider.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />

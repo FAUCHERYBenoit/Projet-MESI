@@ -35,13 +35,14 @@ namespace character.ai
 
         public void HandleState(AI_States aI_States)
         {
-            currentState = aI_States;
-            navMeshAgent.isStopped = true;
-
-            if (currentState == AI_States.None)
-            {
+            if (aI_States == AI_States.None || currentState == AI_States.None)
+            {   
+                currentState = AI_States.None;
                 return;
             }
+
+            currentState = aI_States;
+            navMeshAgent.isStopped = true;
 
             List<AbstractActivity> possibleState = states.Where(state => state.aI_States == aI_States).ToList();
             if (coroutine == null)

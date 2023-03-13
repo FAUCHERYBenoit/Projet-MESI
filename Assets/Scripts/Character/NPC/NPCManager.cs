@@ -19,6 +19,9 @@ namespace character
 
         [SerializeField] StatSystem statSystem;
 
+        public event Action onNpcDied;
+        bool isDead;
+
         private void Awake()
         {
             zombiTakeDamageCollider.onTakeDamage.AddListener(data => { TakeDamage(data); });
@@ -28,11 +31,15 @@ namespace character
 
         protected override void TakeDamage(DamageData damage)
         {
+            if (isDead) return;
+
             statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
 
             if(statSystem.GetStatValue(StatTypes.Life) <= 0)
             {
+                isDead = true;
                 brain.HandleState(AI_States.Dying);
+                onNpcDied?.Invoke();
             }
         }
 

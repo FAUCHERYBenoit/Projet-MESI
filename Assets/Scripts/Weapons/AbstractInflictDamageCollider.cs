@@ -21,6 +21,7 @@ namespace combat
         public Rigidbody2D Rb { get => rb; }
 
         [HideInInspector] public InflictDamageEvent onInflictDamage = new InflictDamageEvent();
+
         public virtual void OpenCollider()
         {
             collider2D.enabled = true;
