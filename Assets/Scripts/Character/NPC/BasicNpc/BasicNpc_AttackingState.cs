@@ -26,12 +26,13 @@ namespace character.ai
 
         protected override AI_States GetNextState()
         {
-            throw new System.NotImplementedException();
+            return AI_States.ChasingTarget;
         }
 
         protected override bool IsStillActive(bool isIt = true)
         {
-            throw new System.NotImplementedException();
+            return true;
+            //throw new System.NotImplementedException();
         }
     }
 }
