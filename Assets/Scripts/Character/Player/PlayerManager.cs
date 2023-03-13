@@ -34,6 +34,8 @@ namespace character
         [Header("combat")]
         [SerializeField] WeaponManager weaponManager;
 
+        [SerializeField] bool canTakeDamage;
+
         void Awake()
         {
             mouvementService = GetComponent<MouvementService>();
@@ -56,6 +58,7 @@ namespace character
         {
             crossAir.CrossAirPositionChanged.AddListener(t => { RotatePlayer(t); });
             playerTakeDamageCollider.onTakeDamage.AddListener(data => { TakeDamage(data); });
+
             mouvementService.onWalk.AddListener(() => { animator.StartRunning(); });
             mouvementService.onStop.AddListener(() => { animator.StopRunnning(); });
             mouvementService.onDashStart.AddListener(() => { Handledash(true); });
@@ -105,8 +108,12 @@ namespace character
 
         protected override void TakeDamage(DamageData damage)
         {
-            statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
-            Debug.Log("The player took damage");
+            if (canTakeDamage)
+            {
+                statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
+                cameraShake.ShakeCamera(2f, 0.1f, 1);
+                Debug.Log($"<color=purple> The player took damage {statSystem.GetStatValue(StatTypes.Life)} </color>");
+            }
         }
 
         /// <summary>
@@ -122,6 +129,7 @@ namespace character
                 if (dashTrail != null)
                 {
                     dashTrail.enabled = true;
+                    canTakeDamage = false;
                 }
             }
             else
@@ -131,6 +139,7 @@ namespace character
                 if (dashTrail != null)
                 {
                     dashTrail.enabled = false;
+                    canTakeDamage = true;
                 }
             }
         }

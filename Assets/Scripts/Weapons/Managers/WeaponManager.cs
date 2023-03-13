@@ -65,10 +65,15 @@ namespace combat.weapon
             }
         }
 
-        private void HandleInflictDamage(BulletCollider bullet, DamageData data, TakeDamageCollider target)
+        private void HandleInflictDamage(AbstractInflictDamageCollider source, DamageData data, TakeDamageCollider target)
         {
-            target.TakeDamage(data);
-            ResetBullet(bullet);
+            switch (source)
+            {
+                case BulletCollider bullet:
+                    target.TakeDamage(data);
+                    ResetBullet(bullet);
+                    break;
+            }
         }
 
         private void ResetBullet(BulletCollider bullet)

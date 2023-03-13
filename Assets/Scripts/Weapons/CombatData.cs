@@ -23,7 +23,7 @@ namespace combat
     /// <summary>
     /// An event that inflicts damage to a target characters
     /// </summary>
-    public class InflictDamageEvent : UnityEvent<BulletCollider, DamageData, TakeDamageCollider> { }
+    public class InflictDamageEvent : UnityEvent<AbstractInflictDamageCollider, DamageData, TakeDamageCollider> { }
     public class TakeDamageEvent : UnityEvent<DamageData> { }
     public class DodgeEvent : UnityEvent { }
     public class ShootBulletEvent : UnityEvent { }

@@ -9,6 +9,8 @@ namespace combat
 {
     public class BulletCollider : AbstractInflictDamageCollider
     {
+        [HideInInspector] public UnityEvent<BulletCollider> onTimeOut = new UnityEvent<BulletCollider>();
+
         public void SetDamageData(DamageData damageData)
         {
             this.damage = damageData;
@@ -19,7 +21,7 @@ namespace combat
             if (collision.gameObject.layer == targetLayer)
             {
                 TakeDamageCollider takeDamageCollider = collision.GetComponent<TakeDamageCollider>();
-                onInflictDamage.Invoke(this, damage, takeDamageCollider);
+                onInflictDamage?.Invoke(this, damage, takeDamageCollider);
             }
             else if (collision.gameObject.layer == 31)
             {

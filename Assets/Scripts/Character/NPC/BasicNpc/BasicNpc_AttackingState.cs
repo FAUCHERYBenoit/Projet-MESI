@@ -1,3 +1,4 @@
+using combat;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +7,33 @@ namespace character.ai
 {
     public class BasicNpc_AttackingState : AbstractActivity
     {
-        [SerializeField] List<Collider> colliders = new List<Collider>();
+        [SerializeField] List<CloseCombatDamageCollider> colliders = new List<CloseCombatDamageCollider>();
         [SerializeField] int damageAmount;
+        bool isActive = true;
 
-        private void Awake()
+        private void Start()
         {
-            
+            colliders.ForEach(c =>
+            {
+                c.onInflictDamage.AddListener((collider, data, target) => target.TakeDamage(data));
+                c.SetDamageData(new DamageData(damageAmount));
+            });
         }
 
         protected override void InitState()
         {
             base.InitState();
+            isActive = true;
+            onAnimationPlayed?.Invoke(StringManager.ZB_ATTACK_ANIMATION, false, () => EndAttack());
+            colliders.ForEach(c =>
+            {
+                c.OpenCollider();
+            });
         }
 
         protected override void DoStateLogique()
         {
-            
+
         }
 
         protected override AI_States GetNextState()
@@ -31,8 +43,16 @@ namespace character.ai
 
         protected override bool IsStillActive(bool isIt = true)
         {
-            return true;
-            //throw new System.NotImplementedException();
+            return isActive;
+        }
+
+        private void EndAttack()
+        {
+            colliders.ForEach(c =>
+            {
+                c.CloseCollider();
+            });
+            isActive = false;
         }
     }
 }

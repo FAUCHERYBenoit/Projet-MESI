@@ -12,11 +12,15 @@ namespace combat
 
         [SerializeField] protected int targetLayer;
 
+        public void SetDamageData(DamageData damageData)
+        {
+            this.damage = damageData;
+        }
+
         public DamageData damage { get; protected set; }
         public Rigidbody2D Rb { get => rb; }
 
         [HideInInspector] public InflictDamageEvent onInflictDamage = new InflictDamageEvent();
-        [HideInInspector] public UnityEvent<BulletCollider> onTimeOut = new UnityEvent<BulletCollider>();
         public virtual void OpenCollider()
         {
             collider2D.enabled = true;

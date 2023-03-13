@@ -30,18 +30,15 @@ namespace character
         {
             statSystem.AddOrRemoveStat(StatTypes.Life, damage.DamageAmount);
 
-            Debug.Log("NPC has taken somedamage "+ damage.DamageAmount);
-
             if(statSystem.GetStatValue(StatTypes.Life) <= 0)
             {
                 brain.HandleState(AI_States.Dying);
-                Debug.Log($"<color=green>Dead</color>");
             }
         }
 
         private void HandleAnimationEvent(string s, bool b, Action a)
         {
-            animator.PlayTargetAnimation(s);
+            animator.PlayTargetAnimation(s, a);
         }
     }
 }
