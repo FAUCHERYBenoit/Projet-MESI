@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class AnimatorManager : MonoBehaviour
 {
     [SerializeField] Animator animator;
+    Action onAnimationEnds;
     private bool isRunning;
 
     public void StartRunning()
@@ -36,4 +38,26 @@ public class AnimatorManager : MonoBehaviour
     {
         animator.SetBool("IsSpecialMotion", false);
     }
+
+    public void PlayTargetAnimation(string animation)
+    {
+        animator.Play(animation);                                     
+    }
+
+    internal void PlayTargetAnimation(string animation, Action a)
+    {
+        animator.Play(animation);
+        onAnimationEnds = a;
+    }
+
+    public void SetAnimationByBool(string boolNme, bool value)
+    {
+        animator.Play("Empty");
+        animator.SetBool(boolNme, value);
+    }
+
+    public void OnAnimationEnds()
+    {
+        onAnimationEnds?.Invoke();
+    } 
 }

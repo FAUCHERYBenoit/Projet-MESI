@@ -44,12 +44,20 @@ PrefabInstance:
       value: MainCharacterExport
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: -0.0050150156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 2.8414683
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 1.4350153
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390205834738553, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 1.4640521
+      value: 1.4640517
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Solvers.Array.data[0]
@@ -58,6 +66,14 @@ PrefabInstance:
     - target: {fileID: 8245390205834738557, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_Solvers.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390205834738558, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245390205834738558, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1189578609
       objectReference: {fileID: 0}
     - target: {fileID: 8245390205834738559, guid: 72b12a99f5e1fa34abfb4d2d6e10382c, type: 3}
       propertyPath: m_RootOrder

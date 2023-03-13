@@ -26,6 +26,9 @@ TagManager:
   - 
   - 
   - 
+  - BulletCollider
+  - PlayerTakeDamage
+  - ZombieTakeDamage
   - 
   - 
   - 
@@ -35,11 +38,17 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Wall
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 4105508867
+    locked: 0
+  - name: Unit
+    uniqueID: 3105388687
+    locked: 0
+  - name: Walls
+    uniqueID: 4004451345
     locked: 0

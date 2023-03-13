@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 public class CrossAir : MonoBehaviour
 {
     public UnityEvent<Transform> CrossAirPositionChanged;
+    Camera camera;
 
-    void Start()
+    public void Init(Camera camera)
     {
+        this.camera = camera;
         Cursor.visible = false;
     }
 
@@ -21,7 +23,7 @@ public class CrossAir : MonoBehaviour
     private void UpdatePosition()
     {
         Vector3 mousePos = new Vector3(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y, 10);
-        Vector3 objPos = Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 objPos = camera.ScreenToWorldPoint(mousePos);
         transform.position = objPos;
 
         CrossAirPositionChanged?.Invoke(transform);

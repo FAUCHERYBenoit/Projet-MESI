@@ -1,3 +1,4 @@
+using combat;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ public class MouvementService : MonoBehaviour
     public float dashIntensity = 1000f;
 
     [Header("MouvementParam")]
-    public Rigidbody rb;
+    public Rigidbody2D rb;
     public Vector2 movement;
     public bool canMove = true;
 
-    public UnityEvent onDashStart = new UnityEvent();
-    public UnityEvent onDashStop = new UnityEvent();
+    public DodgeEvent onDashStart = new DodgeEvent();
+    public DodgeEvent onDashStop = new DodgeEvent();
     public UnityEvent onWalk = new UnityEvent();
     public UnityEvent onStop = new UnityEvent();
 
@@ -25,7 +26,7 @@ public class MouvementService : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
    
     public void moveCharacter(Vector2 direction)
@@ -34,18 +35,18 @@ public class MouvementService : MonoBehaviour
         {
             onWalk.Invoke();
             rb.velocity = direction * speed;
-            Vector3 newDir = new Vector3(direction.x, direction.y, 0);
+            Vector2 newDir = new Vector2(direction.x, direction.y);
             rb.velocity = newDir * speed;
         }
     }
 
-    public void Dash(Vector3 direction)
+    public void Dash(Vector2 direction)
     {
         if (canMove)
         {
             canMove= false;
             rb.AddForce(direction*dashIntensity);
-            Vector3 newDir = new Vector3(direction.x, direction.y, 0);
+            Vector2 newDir = new Vector2(direction.x, direction.y);
             rb.AddForce(newDir*dashIntensity);
             StartCoroutine(DashTimer());
         }
