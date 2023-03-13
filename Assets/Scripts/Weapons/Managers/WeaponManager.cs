@@ -9,13 +9,14 @@ namespace combat.weapon
     public class WeaponManager : MonoBehaviour
     {
         [SerializeField] uint MaximumAmountOfBullets;
-        [SerializeField] Transform shootTransform;
         [SerializeField] Transform poolTransform;
         [SerializeField] Weapons_Item currentWeapon;
+        [SerializeField] Weapon currentEquippedWeapon;
 
         [Header("pooling params")]
         BulletCollider[] bulletColliders;
         [SerializeField] float bulletAutoDestructionTimer;
+        float fireTimer = 0;
 
         uint poolCounter;
 
@@ -34,28 +35,33 @@ namespace combat.weapon
 
         public virtual void ShootBullet()
         {
-            if (bulletColliders[poolCounter] == null)
+            if(fireTimer + currentWeapon.FireRate < Time.time)
             {
-                bulletColliders[poolCounter] = Instantiate(currentWeapon.DefaultBullet.BulletPrefab, shootTransform).GetComponent<BulletCollider>();
-                bulletColliders[poolCounter].onInflictDamage.AddListener((bullet, data, target) => HandleInflictDamage(bullet, data, target));
-                bulletColliders[poolCounter].onTimeOut.AddListener((bullet) => ResetBullet(bullet));
-                bulletColliders[poolCounter].Rb.gravityScale = 0;
-            }
+                fireTimer = Time.time;
 
-            BulletCollider currentBullet = bulletColliders[poolCounter];
-            currentBullet.gameObject.SetActive(true);
+                if (bulletColliders[poolCounter] == null)
+                {
+                    bulletColliders[poolCounter] = Instantiate(currentWeapon.DefaultBullet.BulletPrefab, currentEquippedWeapon.ShootTransforms[0]).GetComponent<BulletCollider>();
+                    bulletColliders[poolCounter].onInflictDamage.AddListener((bullet, data, target) => HandleInflictDamage(bullet, data, target));
+                    bulletColliders[poolCounter].onTimeOut.AddListener((bullet) => ResetBullet(bullet));
+                    bulletColliders[poolCounter].Rb.gravityScale = 0;
+                }
 
-            currentBullet.transform.SetParent(poolTransform, true);
+                BulletCollider currentBullet = bulletColliders[poolCounter];
+                currentBullet.gameObject.SetActive(true);
 
-            Vector3 Direction = transform.right;
-            currentBullet.Rb.AddForce(currentWeapon.BulletSpeed * Direction);
+                currentBullet.transform.SetParent(poolTransform, true);
 
-            currentBullet.OpenCollider(bulletAutoDestructionTimer, currentWeapon.DamageData);
+                Vector3 Direction = transform.right;
+                currentBullet.Rb.AddForce(currentWeapon.BulletSpeed * Direction);
 
-            poolCounter++;
-            if (poolCounter >= MaximumAmountOfBullets)
-            {
-                poolCounter = 0;
+                currentBullet.OpenCollider(bulletAutoDestructionTimer, currentWeapon.DamageData);
+
+                poolCounter++;
+                if (poolCounter >= MaximumAmountOfBullets)
+                {
+                    poolCounter = 0;
+                }
             }
         }
 
@@ -68,9 +74,9 @@ namespace combat.weapon
         private void ResetBullet(BulletCollider bullet)
         {
             bullet.CloseCollider();
-            bullet.transform.SetParent(shootTransform);
-            bullet.gameObject.transform.position = shootTransform.position;
-            bullet.gameObject.transform.localRotation = Quaternion.identity;
+            bullet.transform.SetParent(currentEquippedWeapon.ShootTransforms[0]);
+            bullet.gameObject.transform.position = currentEquippedWeapon.ShootTransforms[0].position;
+            bullet.gameObject.transform.localRotation = currentEquippedWeapon.transform.localRotation;
             bullet.Rb.velocity = Vector3.zero; 
             bullet.gameObject.SetActive(false);
         }

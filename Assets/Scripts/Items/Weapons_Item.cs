@@ -12,12 +12,14 @@ namespace items
         [SerializeField] DamageData damageData;
         [SerializeField] Bullets_Item defaultBullet;
         [SerializeField] float bulletSpeed;
+        [SerializeField] float fireRate;
 
 
         public GameObject WeaponPrefab { get => weaponPrefab; }
         public DamageData DamageData { get => damageData; }
         public Bullets_Item DefaultBullet { get => defaultBullet; }
         public float BulletSpeed { get => bulletSpeed; }
+        public float FireRate { get => fireRate; }
     }
 }
 
