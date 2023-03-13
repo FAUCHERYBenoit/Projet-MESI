@@ -12,12 +12,15 @@ namespace character.ai
         [SerializeField] AI_States nextState;
         [SerializeField] float rotationSpeed;
         private Transform zombieTransform;
+        private bool isActive = false;
 
         protected override void InitState()
         {
             base.InitState();
             navMeshAgent.isStopped = false;
+            isActive = true;
             zombieTransform = navMeshAgent.transform;
+            onAnimationPlayed?.Invoke(StringManager.ZB_RUN_ANIMATION, true, () => { });
         }
 
         protected override void DoStateLogique()
@@ -36,6 +39,7 @@ namespace character.ai
             if (Vector3.Distance(GameManager.Instance.PlayerTransform.position, transform.position) <= navMeshAgent.stoppingDistance + 0.15)
             {
                 navMeshAgent.isStopped = true;
+                isActive = false;
                 return false;
             }
             return true;
@@ -43,9 +47,12 @@ namespace character.ai
 
         private void RotateTowardWalkDirection()
         {
-            float angle = Mathf.Atan2(navMeshAgent.velocity.y, navMeshAgent.velocity.x) * Mathf.Rad2Deg;
-            Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            zombieTransform.rotation = Quaternion.Slerp(zombieTransform.rotation, rotation, rotationSpeed);
+            if (isActive)
+            {
+                float angle = Mathf.Atan2(navMeshAgent.velocity.y, navMeshAgent.velocity.x) * Mathf.Rad2Deg;
+                Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                zombieTransform.rotation = Quaternion.Slerp(zombieTransform.rotation, rotation, rotationSpeed);
+            }
         }
     }
 }
