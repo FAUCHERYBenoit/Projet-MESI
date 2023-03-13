@@ -18,6 +18,7 @@ namespace character
         [SerializeField] NPCBrain brain;
 
         [SerializeField] StatSystem statSystem;
+        [SerializeField] SpriteRenderer spriteRenderer;
 
         public event Action onNpcDied;
         bool isDead;
@@ -40,6 +41,8 @@ namespace character
                 isDead = true;
                 brain.HandleState(AI_States.Dying);
                 onNpcDied?.Invoke();
+                zombiTakeDamageCollider.CloseCollider();
+                spriteRenderer.sortingOrder = -1;
             }
         }
 

@@ -380,7 +380,6 @@ MonoBehaviour:
   - {fileID: 1593700042}
   - {fileID: 460441107}
   damageAmount: -5
-  attackDelay: 1.5
 --- !u!1 &4427496398701028231
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,6 +609,7 @@ MonoBehaviour:
   zombiTakeDamageCollider: {fileID: 7104067278992446541}
   animator: {fileID: 7104067279070000942}
   brain: {fileID: 176416559757493962}
+  spriteRenderer: {fileID: 7104067279070000941}
 --- !u!195 &4161725289819944308
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -774,11 +774,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032991506600559711, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.17648506
+      value: 0.17648411
       objectReference: {fileID: 0}
     - target: {fileID: 9032991506600559711, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
       propertyPath: m_Bounds.m_Center.y
-      value: -0.7261493
+      value: -0.7261503
       objectReference: {fileID: 0}
     - target: {fileID: 9032991506600559711, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
       propertyPath: m_Bounds.m_Extent.x
@@ -786,7 +786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9032991506600559711, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
       propertyPath: m_Bounds.m_Extent.y
-      value: 2.931244
+      value: 2.931243
       objectReference: {fileID: 0}
     - target: {fileID: 9032991507732659963, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
       propertyPath: m_LocalPosition.x
@@ -825,6 +825,11 @@ PrefabInstance:
 --- !u!4 &7104067278659769852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9032991507027633807, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
+  m_PrefabInstance: {fileID: 2291512420251562867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7104067279070000941 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9032991506600559710, guid: 0d017eceb6c83e844ae0304b6d300605, type: 3}
   m_PrefabInstance: {fileID: 2291512420251562867}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &7104067279070000942 stripped

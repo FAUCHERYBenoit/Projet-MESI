@@ -10,6 +10,7 @@ namespace combat
     public class BulletCollider : AbstractInflictDamageCollider
     {
         [HideInInspector] public UnityEvent<BulletCollider> onTimeOut = new UnityEvent<BulletCollider>();
+        [SerializeField] GameObject destructionParticles;
 
         public void SetDamageData(DamageData damageData)
         {
@@ -21,11 +22,13 @@ namespace combat
             if (collision.gameObject.layer == targetLayer)
             {
                 TakeDamageCollider takeDamageCollider = collision.GetComponent<TakeDamageCollider>();
+                Instantiate(destructionParticles, transform.position, transform.rotation);
                 onInflictDamage?.Invoke(this, damage, takeDamageCollider);
             }
             else if (collision.gameObject.layer == 31)
             {
                 StopAllCoroutines();
+                Instantiate(destructionParticles, transform.position, transform.rotation);
                 onTimeOut?.Invoke(this);
             }
         }

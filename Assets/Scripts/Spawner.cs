@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
             if (currentAmount < max_spawn)
             {
                 currentAmount += 1;
-                NPCManager nPCManager = Instantiate(EnemyPrefab, transform).GetComponent<NPCManager>();
+                NPCManager nPCManager = Instantiate(EnemyPrefab, transform.position, transform.rotation).GetComponent<NPCManager>();
                 nPCManager.transform.SetParent(Hierarchy, true);
                 nPCManager.onNpcDied += () => HandleAnNpcDeath();
             }
