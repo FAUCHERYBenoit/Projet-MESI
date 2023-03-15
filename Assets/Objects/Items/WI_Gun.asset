@@ -21,4 +21,4 @@ MonoBehaviour:
     damageAmount: -15
   defaultBullet: {fileID: 11400000, guid: 39fa5e64fdeeefd45b9e247b4403aa93, type: 2}
   bulletSpeed: 1000
-  fireRate: 0.2
+  fireRate: 0.4

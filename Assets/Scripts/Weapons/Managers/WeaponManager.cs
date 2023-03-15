@@ -20,9 +20,12 @@ namespace combat.weapon
 
         uint poolCounter;
 
+        public event Action<float> onFireRateChanged;
+
         private void Awake()
         {
             bulletColliders = new BulletCollider[MaximumAmountOfBullets];
+            onFireRateChanged?.Invoke(currentWeapon.FireRate);
         }
 
         public void ChangeWeapon(Weapons_Item weapon)

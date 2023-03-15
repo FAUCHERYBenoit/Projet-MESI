@@ -36,6 +36,10 @@ namespace character
 
         [SerializeField] bool canTakeDamage;
 
+        Coroutine autoShootCorroutine;
+
+        float currentFireRate;
+
         void Awake()
         {
             mouvementService = GetComponent<MouvementService>();
@@ -67,6 +71,10 @@ namespace character
             inputManager.onMove.AddListener(direction => MovePlayer(direction));
             inputManager.onDashAction.AddListener(direction => Dash(direction));
             inputManager.onPrimaryAction.AddListener(() => Shoot());
+            inputManager.onRealeasePrimary.AddListener(() => ToggleOnOffAutoShoot(false));
+            inputManager.onHoldPrimary.AddListener(() => ToggleOnOffAutoShoot(true));
+
+            weaponManager.onFireRateChanged += (f) => currentFireRate = f; 
 
         }
 
@@ -103,6 +111,30 @@ namespace character
         {
             weaponManager.ShootBullet();
             cameraShake.ShakeCamera(1.25f, 0.2f, 1);
+        }
+
+        public void ToggleOnOffAutoShoot(bool isOn)
+        {
+            if (isOn)
+            {
+                autoShootCorroutine = StartCoroutine(AutoShoot());
+            }
+            else
+            {
+                if (autoShootCorroutine != null)
+                {
+                    StopCoroutine(autoShootCorroutine);
+                }
+            }
+        }
+
+        IEnumerator AutoShoot()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(currentFireRate);
+                Shoot();
+            }
         }
         #endregion
 

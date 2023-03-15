@@ -24,6 +24,9 @@ namespace character
         [HideInInspector] public ButtonInputEvent onSkillTreeAction = new ButtonInputEvent();
         [HideInInspector] public ButtonInputEvent onMapAction = new ButtonInputEvent();
         [HideInInspector] public ButtonInputEvent onUseItemAction = new ButtonInputEvent();
+        [HideInInspector] public ButtonInputEvent onHoldPrimary = new ButtonInputEvent();
+        [HideInInspector] public ButtonInputEvent onRealeasePrimary = new ButtonInputEvent();
+
 
         [HideInInspector] public MovementEvent onDashAction = new MovementEvent();
         [HideInInspector] public MovementEvent onMove = new MovementEvent();
@@ -44,6 +47,8 @@ namespace character
                 playerControls.PlayerMouvement.Mouvement.performed += i => direction = i.ReadValue<Vector2>();
 
                 playerControls.MouseActions.PrimaryButton.performed += i => onPrimaryAction?.Invoke();
+                playerControls.MouseActions.PrimaryHold.performed += i => onHoldPrimary?.Invoke();
+                playerControls.MouseActions.PrimaryHold.canceled += i => onRealeasePrimary?.Invoke();
                 playerControls.MouseActions.SecondaryButton.performed += i => onScondaryAction?.Invoke();
                 playerControls.MouseActions.MouseWheel.performed += i =>
                 {
