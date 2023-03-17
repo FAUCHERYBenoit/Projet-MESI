@@ -15,7 +15,7 @@ namespace test
         [OneTimeSetUp]
         public void OneTimeSetUp()
         {
-            SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+            SceneManager.LoadScene("TEST_SCENE_PlayerLocomotion", LoadSceneMode.Single);
         }
 
         [UnityTest]

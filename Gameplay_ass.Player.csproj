@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\MapGeneration\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\RoomTemplatesScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\Direction.cs" />
+    <Compile Include="Assets\Scripts\Weapons\AbstractInflictDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Weapons\PlayerTakeDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_DyningState.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ApperaingState.cs" />
@@ -93,18 +94,18 @@
     <Compile Include="Assets\Scripts\Weapons\BulletCollider.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\AddRoom.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\BasicNpc\BasicNpc_ChasingTargetState.cs" />
+    <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCBrain.cs" />
     <Compile Include="Assets\Scripts\GenericManager\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Character\NPC\NPCStats.cs" />
     <Compile Include="Assets\Scripts\Character\AbstractCharacterStats.cs" />
     <Compile Include="Assets\Scripts\Items\Weapons_Item.cs" />
+    <Compile Include="Assets\Scripts\Weapons\CloseCombatDamageCollider.cs" />
     <Compile Include="Assets\Scripts\Character\Player\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\MapGeneration\ClosedRoomScript.cs" />
     <Compile Include="Assets\Scripts\Crosshair\CrossAir.cs" />
     <Compile Include="Assets\Scripts\Weapons\TakeDamageCollider.cs" />
-    <Compile Include="Assets\Scripts\Weapons\AbstractInflictDamageCollider.cs" />
-    <Compile Include="Assets\Scripts\Weapons\CloseCombatDamageCollider.cs" />
-    <Compile Include="Assets\Scripts\Spawner.cs" />
+    <Compile Include="Assets\Scripts\Utils\UnityMainThreadDispatcher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\Gameplay_ass.asmdef" />

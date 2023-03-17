@@ -42,18 +42,21 @@ public class GameManager : AbstractManager
     /// <param name="message"></param>
     public override void SendAMessage(Message message)
     {
-        switch (message)
+        UnityMainThreadDispatcher.Instance().Enqueue(() =>
         {
-            case GameToUIMessage gtum:
-                SendMessageToUI(gtum);
-                break;
-            case UIToGameMessage utgm:
-                SendMessageToGame(utgm);
-                break;
-            case AudioMessage am:
-                SendMessageToAudio(am);
-                break;
-        }
+            switch (message)
+            {
+                case GameToUIMessage gtum:
+                    SendMessageToUI(gtum);
+                    break;
+                case UIToGameMessage utgm:
+                    SendMessageToGame(utgm);
+                    break;
+                case AudioMessage am:
+                    SendMessageToAudio(am);
+                    break;
+            }
+        });
     }
 
     private void SendMessageToAudio(AudioMessage am)
